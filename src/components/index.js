@@ -1,3 +1,4 @@
 import Section from "./Section";
+import Tabs from "./Tabs";
 
-export { Section };
+export { Tabs, Section };

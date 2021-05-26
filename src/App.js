@@ -1,27 +1,12 @@
 import "./App.css";
 import { GeneralInfo, WIP } from "./containers";
-import { Switch, Route, Link, BrowserRouter as Router } from "react-router-dom";
-
-const sections = [
-  { title: "Información general", to: "/" },
-  { title: "Horario", to: "/schedule" },
-  { title: "Materiales", to: "/education" },
-  { title: "En vivo", to: "/live" },
-  { title: "Mi sitio", to: "/my-tournament" },
-];
+import { Tabs } from "./components";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <nav>
-        <ul>
-          {sections.map((section) => (
-            <li>
-              <Link to={section.to}> {section.title} </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <Tabs /> 
       <Switch>
         <Route exact path="/" component={GeneralInfo} />
         <Route exact path="/schedule" component={WIP} />
