@@ -1,0 +1,30 @@
+.section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.section__title {
+  color: rgb(182, 63, 136);
+  margin-bottom: 0px;
+  margin-block-end: 0px;
+  font-family: "Biko Bold";
+}
+
+.section__subtitle {
+  color: rgb(182, 63, 136);
+  margin-bottom: 0px;
+  margin-block-end: 0px;
+  font-family: "Lato Light";
+  margin-top: 0px;
+  font-size: 0.9em;
+}
+
+.section__description {
+  color: rgb(96, 96, 96);
+}
