@@ -1,0 +1,33 @@
+.slider-card {
+  background: white;
+  min-height: 400px;
+  color: rgb(93, 47, 106);
+  border-radius: 40px;
+
+  box-sizing: border-box;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.16);
+  flex: 1;
+  margin: 15px;
+}
+
+.slider-card a {
+  text-decoration: none;
+}
+
+.slider-card-header {
+  border-radius: 40px 40px 0px 0px;
+  background: url('./img/patronCard.png');
+  background-size: 25%;
+  background-attachment: fixed;
+  background-position: 65% 47%;
+  min-height: 150px;
+  padding: 0px;
+  margin: 0;
+}
+
+.slider-card-body {
+  padding: 20px;
+  background: white;
+
+  margin: 0;
+}
