@@ -1,0 +1,41 @@
+{
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended",
+      "plugin:react/recommended",
+      "plugin:jsx-a11y/recommended"
+    ],
+    "plugins": ["react-hooks", "prettier", "react"],
+    "rules": {
+      "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+      "no-nested-ternary": "warn",
+      "react-hooks/rules-of-hooks": "warn",
+      "react-hooks/exhaustive-deps": "warn",
+      "no-shadow": ["error", { "builtinGlobals": false, "hoist": "functions", "allow": [] }],
+     
+      "react/destructuring-assignment": [1],
+      "react/require-default-props": [1],
+      "react/self-closing-comp": [1],
+      "react/no-unused-prop-types": [1],
+      "react/no-typos": [1],
+      "no-unused-vars": "warn", 
+      "jsx-a11y/anchor-is-valid": [
+        "warn",
+        {
+          "components": ["Link"],
+          "specialLink": ["hrefLeft", "hrefRight"],
+          "aspects": ["noHref", "invalidHref", "preferButton"]
+        }
+      ],"jsx-a11y/anchor-has-content": "off"
+    ,
+      "react/prop-types": "warn",
+    "prettier/prettier": "warn"
+    }
+    
+    
+  }
+  

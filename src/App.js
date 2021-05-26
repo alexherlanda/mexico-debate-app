@@ -1,14 +1,16 @@
-import "./App.css";
-import { GeneralInfo, WIP } from "./containers";
-import { Tabs } from "./components";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import './App.css';
+import { GeneralInfo, WIP, TestComponents } from './containers';
+import { Tabs } from './components';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
-      <Tabs /> 
+      <Tabs />
       <Switch>
         <Route exact path="/" component={GeneralInfo} />
+        <Route exact path="/test" component={TestComponents} />
         <Route exact path="/schedule" component={WIP} />
         <Route exact path="/education" component={WIP} />
         <Route exact path="/live" component={WIP} />
@@ -17,5 +19,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
