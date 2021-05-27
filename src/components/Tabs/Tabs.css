@@ -9,10 +9,37 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
+  gap: 10px 0px;
   list-style: none;
 }
 
 .tabs__list li {
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.tabs__list-link {
+  text-decoration: none;
+  color: rgb(96, 96, 96);
+}
+
+.active {
+  color: rgb(182, 63, 136);
+}
+
+/* Large Screens */
+@media screen and (min-width: 680px) {
+  .tabs__list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
 }

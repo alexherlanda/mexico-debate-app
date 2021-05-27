@@ -1,5 +1,5 @@
-import React from "react";
-import { Section } from "../../components";
+import React from 'react';
+import { Section } from '../../components';
 
 const GeneralInfo = () => {
   return (

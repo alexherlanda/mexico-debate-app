@@ -1,0 +1,85 @@
+[debug] [2021-05-26T15:22:14.652Z] ----------------------------------------------------------------------
+[debug] [2021-05-26T15:22:14.656Z] Command:       /usr/local/bin/firebase /home/alex/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2021-05-26T15:22:14.657Z] CLI Version:   8.6.0
+[debug] [2021-05-26T15:22:14.657Z] Platform:      linux
+[debug] [2021-05-26T15:22:14.658Z] Node Version:  v12.18.1
+[debug] [2021-05-26T15:22:14.706Z] Time:          Wed May 26 2021 10:22:14 GMT-0500 (Central Daylight Time)
+[debug] [2021-05-26T15:22:14.706Z] ----------------------------------------------------------------------
+[debug] [2021-05-26T15:22:14.706Z] 
+[debug] [2021-05-26T15:22:14.741Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-26T15:22:14.744Z] > authorizing via signed-in user
+[debug] [2021-05-26T15:22:14.745Z] [iam] checking project mexico-debate for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-05-26T15:22:14.762Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-26T15:22:14.762Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-26T15:22:34.821Z] [iam] error while checking permissions, command may fail: FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-05-26T15:22:34.824Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-05-26T15:22:34.825Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-05-26T15:22:35.178Z] <<< HTTP RESPONSE 200 {"pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Wed, 26 May 2021 15:22:35 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-26T15:22:35.305Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/mexico-debate  
+ 
+[debug] [2021-05-26T15:22:55.328Z] Server Error. getaddrinfo EAI_AGAIN firebase.googleapis.com
+[debug] [2021-05-26T15:23:15.351Z] FirebaseError: Server Error. getaddrinfo EAI_AGAIN firebase.googleapis.com
+    at Request._callback (/home/alex/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/api.js:32:31)
+    at self.callback (/home/alex/.cache/firebase/tools/lib/node_modules/request/request.js:185:22)
+    at Request.emit (events.js:315:20)
+    at Request.EventEmitter.emit (domain.js:482:12)
+    at Request.onRequestError (/home/alex/.cache/firebase/tools/lib/node_modules/request/request.js:877:8)
+    at ClientRequest.emit (events.js:327:22)
+    at ClientRequest.EventEmitter.emit (domain.js:482:12)
+    at TLSSocket.socketErrorListener (_http_client.js:426:9)
+    at TLSSocket.emit (events.js:315:20)
+    at TLSSocket.EventEmitter.emit (domain.js:482:12)
+    at emitErrorNT (internal/streams/destroy.js:92:8)
+    at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+    at processTicksAndRejections (internal/process/task_queues.js:84:21)
+[error] 
+[error] Error: Failed to get Firebase project mexico-debate. Please make sure the project exists and your account has permission to access it.
+[debug] [2021-05-26T15:23:35.308Z] ----------------------------------------------------------------------
+[debug] [2021-05-26T15:23:35.309Z] Command:       /usr/local/bin/firebase /home/alex/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2021-05-26T15:23:35.309Z] CLI Version:   8.6.0
+[debug] [2021-05-26T15:23:35.309Z] Platform:      linux
+[debug] [2021-05-26T15:23:35.309Z] Node Version:  v12.18.1
+[debug] [2021-05-26T15:23:35.310Z] Time:          Wed May 26 2021 10:23:35 GMT-0500 (Central Daylight Time)
+[debug] [2021-05-26T15:23:35.310Z] ----------------------------------------------------------------------
+[debug] [2021-05-26T15:23:35.310Z] 
+[debug] [2021-05-26T15:23:35.314Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-26T15:23:35.315Z] > authorizing via signed-in user
+[debug] [2021-05-26T15:23:35.315Z] [iam] checking project mexico-debate for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-05-26T15:23:35.317Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/mexico-debate:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-05-26T15:23:55.348Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. getaddrinfo EAI_AGAIN cloudresourcemanager.googleapis.com
+[debug] [2021-05-26T15:23:55.350Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/mexico-debate  
+ 
+[debug] [2021-05-26T15:23:55.738Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 May 2021 15:23:55 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-26T15:23:55.740Z] [WARNING] Unable to fetch default resources. Falling back to project id (mexico-debate)
+[info] 
+[info] === Deploying to 'mexico-debate'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-05-26T15:23:55.750Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/mexico-debate/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2021-05-26T15:24:15.958Z] Error: getaddrinfo EAI_AGAIN firebasehosting.googleapis.com
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+[error] 
+[error] Error: Server Error. getaddrinfo EAI_AGAIN firebasehosting.googleapis.com
+[debug] [2021-05-26T15:26:58.683Z] ----------------------------------------------------------------------
+[debug] [2021-05-26T15:26:58.684Z] Command:       /usr/local/bin/firebase /home/alex/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2021-05-26T15:26:58.685Z] CLI Version:   8.6.0
+[debug] [2021-05-26T15:26:58.685Z] Platform:      linux
+[debug] [2021-05-26T15:26:58.685Z] Node Version:  v12.18.1
+[debug] [2021-05-26T15:26:58.685Z] Time:          Wed May 26 2021 10:26:58 GMT-0500 (Central Daylight Time)
+[debug] [2021-05-26T15:26:58.685Z] ----------------------------------------------------------------------
+[debug] [2021-05-26T15:26:58.685Z] 
+[debug] [2021-05-26T15:26:58.690Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-26T15:26:58.691Z] > authorizing via signed-in user
+[debug] [2021-05-26T15:26:58.691Z] [iam] checking project mexico-debate for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-05-26T15:26:58.693Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/mexico-debate:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-05-26T15:26:59.084Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 May 2021 15:26:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=210","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-05-26T15:26:59.089Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/mexico-debate  
+ 
+[debug] [2021-05-26T15:27:11.125Z] Server Error. connect ECONNREFUSED 120.78.181.57:443

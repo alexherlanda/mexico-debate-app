@@ -1,11 +1,11 @@
-import React from "react";
-import "./Section.css";
+import React from 'react';
+import './Section.css';
 
 const Section = ({ title, subtitle, description, children }) => {
   return (
     <section className="section">
       <h2 className="section__title"> {title} </h2>
-      {typeof subtitle === "string" ? (
+      {typeof subtitle === 'string' ? (
         <h3 className="section__subtitle"> {subtitle.toUpperCase()} </h3>
       ) : null}
 
