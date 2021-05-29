@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ActivitiesList, DaySelector } from '../../components';
 import scheduleMinor from '../../data/scheduleMinorCategory';
 import scheduleMajor from '../../data/scheduleMajorCategory';
+import './Schedule.css';
 
 const Schedule = () => {
   const [selectedCategory, setSelectedCategory] = useState('minor');
@@ -21,13 +22,14 @@ const Schedule = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <DaySelector
         onDayClicked={handleSelectedDay}
+        selectedDay={selectedDayIndex}
         dataSource={selectedCategory === 'minor' ? scheduleMinor : scheduleMajor}
       />
       <ActivitiesList dataSource={activitiesList} />{' '}
-    </>
+    </div>
   );
 };
 

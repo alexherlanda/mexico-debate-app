@@ -9,9 +9,9 @@ const Activity = ({ title, description, start, end }) => {
         <div className="activity__semaphore" />
       </div>
       <div className="activity__info">
-        <span> {`${start} - ${end} am`}</span>
-        <span> {title} </span>
-        {description ? <span> {description} </span> : null}
+        <span className="time"> {`${start} - ${end} am`}</span>
+        <span className="title"> {title && title.toUpperCase()} </span>
+        {description ? <span className="description"> {description} </span> : null}
       </div>
     </div>
   );
