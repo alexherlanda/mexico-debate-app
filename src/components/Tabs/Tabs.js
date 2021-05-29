@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import sections from '../../data/sections';
 import './Tabs.css';
 
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('Información general');
-
-  const handleOnTabClick = (clickedTabName) => {
-    setActiveTab(clickedTabName);
-  };
+  const { pathname } = useLocation();
 
   return (
     <nav className="tabs">
@@ -16,9 +12,8 @@ const Tabs = () => {
         {sections.map((section) => (
           <li key={section.title}>
             <Link
-              className={activeTab === section.title ? 'tabs__list-link active' : 'tabs__list-link'}
+              className={pathname === section.to ? 'tabs__list-link active' : 'tabs__list-link'}
               to={section.to}
-              onClick={() => handleOnTabClick(section.title)}
             >
               {section.title.toUpperCase()}
             </Link>

@@ -13,7 +13,7 @@ const GeneralInfo = () => {
 
       <Section
         title="Camino al torneo"
-        subtitle="Mx Debate 2021"
+        subtitle="México Debate 2021"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit "
       >
         Componente de pasos
