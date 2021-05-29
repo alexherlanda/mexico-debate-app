@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivitiesList } from '../../components';
+import { ActivitiesList, DaySelector } from '../../components';
 import scheduleMinor from '../../data/scheduleMinorCategory';
 import scheduleMajor from '../../data/scheduleMajorCategory';
 
@@ -16,7 +16,19 @@ const Schedule = () => {
     }
   }, [selectedDayIndex, selectedCategory]);
 
-  return <ActivitiesList dataSource={activitiesList} />;
+  const handleSelectedDay = (providedIndex) => {
+    setSelectedDayIndex(providedIndex);
+  };
+
+  return (
+    <>
+      <DaySelector
+        onDayClicked={handleSelectedDay}
+        dataSource={selectedCategory === 'minor' ? scheduleMinor : scheduleMajor}
+      />
+      <ActivitiesList dataSource={activitiesList} />{' '}
+    </>
+  );
 };
 
 export default Schedule;

@@ -1,0 +1,12 @@
+.days-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.day {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+}
