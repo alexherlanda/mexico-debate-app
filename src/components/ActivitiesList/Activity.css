@@ -25,6 +25,7 @@
 .title {
   color: #B63F88;
   margin-bottom: 0.5rem;
+  font-family: Lato light;
 }
 
 .time {
@@ -32,9 +33,10 @@
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
+  font-family: Biko Bold;
 }
 
 .description {
   line-height: 1.35rem;
-  font-weight: 150;
+  font-family: Lato light;
 }
