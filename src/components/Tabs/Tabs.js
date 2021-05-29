@@ -4,7 +4,7 @@ import sections from '../../data/sections';
 import './Tabs.css';
 
 const Tabs = () => {
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState('Información general');
 
   const handleOnTabClick = (clickedTabName) => {
     setActiveTab(clickedTabName);
@@ -20,7 +20,7 @@ const Tabs = () => {
               to={section.to}
               onClick={() => handleOnTabClick(section.title)}
             >
-              {section.title}
+              {section.title.toUpperCase()}
             </Link>
           </li>
         ))}
