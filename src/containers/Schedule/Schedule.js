@@ -22,7 +22,7 @@ const Schedule = () => {
   };
 
   return (
-    <div className="container">
+    <div className="schedule">
       <DaySelector
         onDayClicked={handleSelectedDay}
         selectedDay={selectedDayIndex}

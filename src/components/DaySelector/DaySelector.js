@@ -12,7 +12,9 @@ const DaySelector = ({ dataSource, onDayClicked, selectedDay }) => {
       <div className="days-selector">
         {dataSource.map((day, index) => (
           <button
-            className={index === selectedDay ? 'selected' : 'day'}
+            className={
+              index === selectedDay ? 'days-selector__button selected' : 'days-selector__button day'
+            }
             key={day.id}
             onClick={() => handleOnClick(index)}
           >
