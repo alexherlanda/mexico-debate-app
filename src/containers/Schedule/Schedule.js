@@ -8,6 +8,7 @@ import './Schedule.css';
 const Schedule = () => {
   const [selectedCategory, setSelectedCategory] = useState('minor');
   const [selectedDayIndex, setSelectedDayIndex] = useState(0);
+  const [selectedTimeZone, setSelectedTimeZone] = useState('gtm1');
   const [activitiesList, setActivitiesList] = useState([]);
 
   useEffect(() => {
@@ -26,6 +27,10 @@ const Schedule = () => {
     setSelectedCategory(categoryName);
   };
 
+  const handleOnZoneClick = (timeZone) => {
+    setSelectedTimeZone(timeZone);
+  }
+
   return (
     <div className="schedule">
       <DaySelector
@@ -38,7 +43,10 @@ const Schedule = () => {
           selectedCategory={selectedCategory}
           onCategoryClick={handleOnClickCategory}
         />
-        <TimeZoneSelector />
+        <TimeZoneSelector
+          selectedTimeZone={selectedTimeZone}
+          onZoneClick={handleOnZoneClick}
+        />
       </div>
       <ActivitiesList dataSource={activitiesList} />{' '}
     </div>

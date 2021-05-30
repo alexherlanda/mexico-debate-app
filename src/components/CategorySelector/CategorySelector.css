@@ -1,0 +1,30 @@
+.category_selector {
+  border-radius: 15px;
+  height: 3.2rem;
+  overflow: hidden;
+  width: max-content;
+  box-shadow: 0px 0px 10px 1px lightgray;
+  margin: 10px;
+}
+
+.category {
+  border: none;
+  border-radius: 0;
+  height: 100%;
+  width: 6rem;
+  background-color: white;
+  color: #b63f88;
+  font-size: 1.2rem;
+  font-family: Biko Bold;
+}
+
+.selected_category {
+  border: none;
+  border-radius: 0;
+  height: 100%;
+  width: 6rem;
+  background-color: #b63f88;
+  color: white;
+  font-size: 1.2rem;
+  font-family: Biko Bold;
+}

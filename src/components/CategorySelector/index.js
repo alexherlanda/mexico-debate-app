@@ -1,6 +1,7 @@
 import React from 'react';
+import './CategorySelector.css';
 
-const CategorySelector = ({ onCategoryClick }) => {
+const CategorySelector = ({ onCategoryClick, selectedCategory }) => {
   const handleOnCategoryClick = (event) => {
     const {
       target: { name },
@@ -9,11 +10,19 @@ const CategorySelector = ({ onCategoryClick }) => {
   };
 
   return (
-    <div>
-      <button name="minor" onClick={handleOnCategoryClick}>
+    <div className="category_selector">
+      <button
+        className={selectedCategory === 'minor' ? 'selected_category' : 'category'}
+        name="minor"
+        onClick={handleOnCategoryClick}
+      >
         Menor
       </button>
-      <button name="major" onClick={handleOnCategoryClick}>
+      <button
+        className={selectedCategory === 'major' ? 'selected_category' : 'category'}
+        name="major"
+        onClick={handleOnCategoryClick}
+      >
         Mayor
       </button>
     </div>
