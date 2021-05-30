@@ -13,14 +13,15 @@
   color: rgb(182, 63, 136);
   margin-bottom: 0px;
   margin-block-end: 0px;
-  font-family: "Biko Bold";
+  font-family: 'Biko Bold';
+  font-size: 32px;
 }
 
 .section__subtitle {
   color: rgb(182, 63, 136);
   margin-bottom: 0px;
   margin-block-end: 0px;
-  font-family: "Lato Light";
+  font-family: 'Lato Light';
   margin-top: 0px;
   font-size: 0.9em;
 }

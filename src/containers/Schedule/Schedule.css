@@ -1,0 +1,12 @@
+.schedule {
+  width: 100%;
+  margin: auto;
+}
+
+/* Large Screens */
+@media screen and (min-width: 680px) {
+  .schedule {
+    width: 70%;
+    margin: auto;
+  }
+}
