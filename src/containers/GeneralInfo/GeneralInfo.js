@@ -1,5 +1,6 @@
 import React from 'react';
-import { Section } from '../../components';
+import { Section, MediaCard } from '../../components';
+import steps from '../../data/steps';
 
 const GeneralInfo = () => {
   return (
@@ -16,7 +17,14 @@ const GeneralInfo = () => {
         subtitle="México Debate 2021"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit "
       >
-        Componente de pasos
+        {steps.map(({ step, description, redirectTo }) => (
+          <MediaCard
+            key={step}
+            description={description}
+            title={'Paso ' + step}
+            redirectTo={redirectTo}
+          />
+        ))}
       </Section>
     </div>
   );

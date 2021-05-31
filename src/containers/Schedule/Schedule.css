@@ -3,6 +3,11 @@
   margin: auto;
 }
 
+.schedule__category {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /* Large Screens */
 @media screen and (min-width: 680px) {
   .schedule {
