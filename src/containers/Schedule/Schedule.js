@@ -27,9 +27,9 @@ const Schedule = () => {
     setSelectedCategory(categoryName);
   };
 
-  const handleOnZoneClick = (timeZone) => {
-    setSelectedTimeZone(timeZone);
-  }
+  // const handleOnZoneClick = (timeZone) => {
+  //   setSelectedTimeZone(timeZone);
+  // };
 
   return (
     <div className="schedule">
@@ -38,15 +38,15 @@ const Schedule = () => {
         selectedDay={selectedDayIndex}
         dataSource={selectedCategory === 'minor' ? scheduleMinor : scheduleMajor}
       />
-      <div>
+      <div className="schedule__category">
         <CategorySelector
           selectedCategory={selectedCategory}
           onCategoryClick={handleOnClickCategory}
         />
-        <TimeZoneSelector
+        {/* <TimeZoneSelector
           selectedTimeZone={selectedTimeZone}
           onZoneClick={handleOnZoneClick}
-        />
+        /> */}
       </div>
       <ActivitiesList dataSource={activitiesList} />{' '}
     </div>
