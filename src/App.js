@@ -15,6 +15,7 @@ function App() {
         <Route exact path="/education" component={EducationalMaterials} />
         <Route exact path="/live" component={WIP} />
         <Route exact path="/my-tournament" component={WIP} />
+        <Route exact path="*" component={GeneralInfo} />
       </Switch>
     </Router>
   );

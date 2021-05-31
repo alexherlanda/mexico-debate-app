@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'components/SliderCard';
 import Slider from 'components/Slider';
+import WinnerCard from 'components/WinnerCard';
 
 function TestComponents() {
   return (
@@ -11,6 +12,7 @@ function TestComponents() {
         <Card onClick={() => alert('Dispara una acción 2')} />
         <Card onClick={() => alert('Dispara una acción 3')} />
         <Card onClick={() => alert('Dispara una acción 4')} />
+        <WinnerCard />
       </div>
 
       <Slider />
