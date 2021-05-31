@@ -1,25 +1,26 @@
 .winner-card {
-  height: 300px;
-  width: 200px;
+  height: 160px;
+  width: 145px;
   border-radius: 10px;
+  display: flex;
 }
 
 .winner-photo {
-  height: 310px;
-  width: 205px;
+  height: 160px;
+  width: 145px;
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 10px;
   position: absolute;
   z-index: 1;
-  margin-top: -10px;
-  margin-left: -5px;
+
+  box-sizing: border-box;
 }
 
 .winner-description {
   position: absolute;
-  height: 300px;
-  width: 200px;
+  height: 160px;
+  width: 145px;
   border-radius: 10px;
   color: white;
   z-index: 0;
@@ -40,9 +41,23 @@
 }
 
 .winner-description-content {
-  bottom: -60px;
+  bottom: -40px;
   position: absolute;
-  width: 200px;
+  width: 145px;
   padding: 10px;
+  box-sizing: border-box;
   transition: all 0.3s ease;
+  text-align: left;
+}
+
+.winner-description-content h2 {
+  font-size: 1.2rem;
+}
+
+.winner-description-content h3 {
+  font-size: 1rem;
+}
+
+.slider-winner-container {
+  width: 600px;
 }

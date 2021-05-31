@@ -1,0 +1,13 @@
+.main-info-winners {
+  background-color: #b64f88;
+  width: 40%;
+  min-height: 337px;
+  display: inline-block;
+  border-radius: 20px;
+  margin: 0 0;
+  vertical-align: top;
+  color: white;
+  text-align: right;
+  padding: 25px;
+  box-sizing: border-box;
+}

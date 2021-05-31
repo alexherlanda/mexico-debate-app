@@ -1,15 +1,13 @@
 import React from 'react';
 import { Section, MediaCard } from '../../components';
 import steps from '../../data/steps';
+import LastWinners from 'containers/LastWinners';
 
 const GeneralInfo = () => {
   return (
     <div>
-      <Section
-        title="Sumante al dialogo"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit "
-      >
-        Componente de ganadores anteriores
+      <Section title="Sumante al dialogo" description=" ">
+        <LastWinners />{' '}
       </Section>
 
       <Section

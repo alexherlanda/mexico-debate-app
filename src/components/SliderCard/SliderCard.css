@@ -17,12 +17,13 @@
 .slider-card-header {
   border-radius: 40px 40px 0px 0px;
   background: url('./img/patronCard.png');
-  background-size: 25%;
-  background-attachment: fixed;
-  background-position: 65% 47%;
+  background-size: 104%;
+  background-attachment: unset;
+  background-position: 98% 68%;
   min-height: 150px;
   padding: 0px;
   margin: 0;
+  background-repeat: no-repeat;
 }
 
 .slider-card-body {

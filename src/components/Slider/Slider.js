@@ -1,10 +1,10 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import PropTypes from 'prop-types';
 import Card from 'components/SliderCard';
-const responsive = {
+const configResponsive = {
   superLargeDesktop: {
-    // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
     items: 5,
   },
@@ -21,19 +21,30 @@ const responsive = {
     items: 1,
   },
 };
-function Slider() {
-  return (
-    <Carousel responsive={responsive} draggable>
-      <Card onClick={() => alert('Dispara una acción 1')} />
-      <Card onClick={() => alert('Dispara una acción 2')} />
-      <Card onClick={() => alert('Dispara una acción 3')} />
-      <Card onClick={() => alert('Dispara una acción 4')} />
-      <Card onClick={() => alert('Dispara una acción 5')} />
-      <Card onClick={() => alert('Dispara una acción 6')} />
-      <Card onClick={() => alert('Dispara una acción 7')} />
-      <Card onClick={() => alert('Dispara una acción 8')} />
+function Slider({ children, items, onClick, config }) {
+  return items.length > 0 ? (
+    <Carousel responsive={configResponsive} draggable {...config}>
+      {items.map((item) => {
+        return (
+          <React.Fragment key={item}>
+            {React.cloneElement(children, { ...item, onClick })}
+          </React.Fragment>
+        );
+      })}
     </Carousel>
-  );
+  ) : null;
 }
+Slider.prototypes = {
+  items: PropTypes.array,
+  children: PropTypes.node,
+  onClick: PropTypes.func,
+  config: PropTypes.object,
+};
 
+Slider.defaultProps = {
+  items: [{ title: 'Titulo', description: 'Descripción' }],
+  children: <Card />,
+  onClick: () => alert('Click en item'),
+  config: { responsive: configResponsive },
+};
 export default Slider;
