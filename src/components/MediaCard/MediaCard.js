@@ -5,8 +5,7 @@ import './MediaCard.css';
 const MediaCard = ({ title, description, redirectTo }) => {
   const history = useHistory();
   const redirect = () => {
-    console.log('hello', redirectTo);
-    history.push(redirectTo);
+    if (typeof redirectTo === 'string') history.push(redirectTo);
   };
 
   return (
@@ -18,8 +17,8 @@ const MediaCard = ({ title, description, redirectTo }) => {
         tabIndex={0}
         onKeyPress={(e) => {}}
       >
-        <span> {title} </span>
-        <span> {description} </span>
+        <span className="media-card__header"> {title} </span>
+        <span className="media-card__description"> {description} </span>
       </div>
     </div>
   );

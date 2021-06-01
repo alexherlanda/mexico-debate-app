@@ -1,21 +1,42 @@
 .media-card {
-  background: red;
+  background: url('./data/background1.png');
+  background-size: cover;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   border-radius: 12px;
-  width: 200px;
-  height: 225px;
+  width: 250px;
+  height: 300px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .media-card__title {
+  cursor: pointer;
+  position: relative;
+  bottom: -1px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   flex-direction: column;
-  background-color: blue;
-  width: 100%;
+  background-color: white;
+  width: 250px;
   height: 30%;
   border-radius: 0px 0px 12px 12px;
+  padding: 5px;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.media-card__header {
+  font-family: 'Biko Bold';
+  color: rgb(96, 47, 106);
+  font-size: 1.1rem;
+}
+
+.media-card__description {
+  font-family: 'Lato Light';
+  color: rgb(96, 96, 96);
+  font-size: 0.8rem;
 }

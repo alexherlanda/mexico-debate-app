@@ -1,0 +1,16 @@
+.steps-slider {
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  margin: 5px;
+}
+
+.steps-slider__carrousel {
+  width: 80%;
+}
+
+.steps-slider__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

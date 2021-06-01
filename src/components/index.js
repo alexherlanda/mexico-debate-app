@@ -5,6 +5,7 @@ import ActivitiesList from './ActivitiesList';
 import DaySelector from './DaySelector';
 import CategorySelector from './CategorySelector';
 import TimeZoneSelector from './TimeZoneSelector';
+import StepsSlider from './StepsSlider';
 
 export {
   ActivitiesList,
@@ -14,4 +15,5 @@ export {
   Section,
   MediaCard,
   DaySelector,
+  StepsSlider,
 };
