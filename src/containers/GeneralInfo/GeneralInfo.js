@@ -13,8 +13,9 @@ const GeneralInfo = () => {
         title="Camino al torneo"
         subtitle="México Debate 2021"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit "
-      />
-      <StepsSlider />
+      >
+        <StepsSlider />
+      </Section>
     </div>
   );
 };

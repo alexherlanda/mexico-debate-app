@@ -2,11 +2,12 @@
   display: flex;
   justify-content: center;
   height: 350px;
-  margin: 5px;
+
+  width: 100%;
 }
 
 .steps-slider__carrousel {
-  width: 80%;
+  width: 100%;
 }
 
 .steps-slider__item {
