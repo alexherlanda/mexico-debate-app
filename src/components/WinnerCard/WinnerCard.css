@@ -51,13 +51,9 @@
 }
 
 .winner-description-content h2 {
-  font-size: 1.2rem;
-}
-
-.winner-description-content h3 {
   font-size: 1rem;
 }
 
-.slider-winner-container {
-  width: 600px;
+.winner-description-content h3 {
+  font-size: 0.8rem;
 }

@@ -8,10 +8,6 @@
   box-sizing: border-box;
 }
 
-.slider-winner-container {
-  margin: 0 auto;
-}
-
 .winners-grid .react-multiple-carousel__arrow {
   background: orange !important;
   min-width: 32px !important;
@@ -24,4 +20,56 @@
 
 .winners-grid .react-multiple-carousel__arrow--right {
   right: 0rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .winners-grid {
+    /* background: blue; */
+    width: 55%;
+    min-height: 200px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin: 0rem 1rem;
+  }
+  section {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  /*For Projectors or Higher Resolution Screens (Full HD)*/
+
+  /* .winners-grid {
+    background: red;
+  } */
+  section {
+    margin: 0 auto;
+    width: 1464px;
+  }
+}
+@media screen and (min-width: 3840px) {
+  /*For 4K Displays (Ultra HD)*/
+  /* .winners-grid {
+    background: brown;
+  } */
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .winners-grid {
+    margin-bottom: 1rem;
+    padding: 10px;
+    width: 100%;
+  }
+  .slider-winner-container {
+    width: 100% !important;
+  }
+  .winner-card,
+  .winner-description,
+  .winner-photo {
+    width: 315px !important;
+    height: 320px !important;
+    border-radius: 20px !important;
+  }
 }
