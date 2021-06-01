@@ -1,12 +1,15 @@
 import React from 'react';
 import { Section, StepsSlider } from '../../components';
 import LastWinners from 'containers/LastWinners';
+import { useMediaQuery } from 'react-responsive';
 
 const GeneralInfo = () => {
+  const isLittleScreen = useMediaQuery({ query: '(max-width: 1224px)' });
+ // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   return (
     <div>
       <Section title="Sumante al dialogo" description=" ">
-        <LastWinners />
+        {isLittleScreen ? null : <LastWinners />}
       </Section>
 
       <Section

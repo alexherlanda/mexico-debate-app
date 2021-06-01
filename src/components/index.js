@@ -1,4 +1,5 @@
 import Section from './Section';
+import Banner from './Banner';
 import Tabs from './Tabs';
 import MediaCard from './MediaCard';
 import ActivitiesList from './ActivitiesList';
@@ -16,4 +17,5 @@ export {
   MediaCard,
   DaySelector,
   StepsSlider,
+  Banner,
 };
