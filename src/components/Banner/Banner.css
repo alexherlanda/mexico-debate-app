@@ -21,6 +21,7 @@
   color: #a2236e;
   margin: 1rem;
   font-size: 1.9rem;
+  font-family: 'Lato Bold';
 }
 
 .banner__info p {
@@ -28,6 +29,10 @@
   margin: 1rem;
   font-size: 1rem;
   letter-spacing: 1px;
+  font-family: 'Lato Light';
+}
+.banner__info p b {
+  font-family: 'Lato Bold';
 }
 
 .banner_info img {
