@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'components/SliderCard';
 import Slider from 'components/Slider';
 import WinnerCard from 'components/WinnerCard';
+import Banner from 'components/Banner';
 
 function TestComponents() {
   return (
@@ -14,7 +15,6 @@ function TestComponents() {
         <Card onClick={() => alert('Dispara una acción 4')} />
         <WinnerCard />
       </div>
-
       <Slider
         items={[
           { title: 'Titulo 1', description: 'Description 1' },
@@ -111,6 +111,8 @@ function TestComponents() {
       >
         <WinnerCard />
       </Slider>
+      <hr />
+      <Banner />
     </>
   );
 }
