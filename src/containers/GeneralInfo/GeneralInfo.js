@@ -5,11 +5,11 @@ import { useMediaQuery } from 'react-responsive';
 
 const GeneralInfo = () => {
   const isLittleScreen = useMediaQuery({ query: '(max-width: 1224px)' });
- // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
+  // const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
   return (
     <div>
       <Section title="Sumante al dialogo" description=" ">
-        {isLittleScreen ? null : <LastWinners />}
+        <LastWinners />
       </Section>
 
       <Section
