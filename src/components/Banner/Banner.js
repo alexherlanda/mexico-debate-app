@@ -1,11 +1,18 @@
 import React from 'react';
 import MD from './img/MXD.svg';
+import patron from './img/patron.svg';
 import './Banner.css';
 const Banner = () => {
   return (
     <div className="banner">
       <div className="banner__column banner__info">
-        <img alt="Mexico Debate Logo" src={MD} className="banner__logo" width="250px" />
+        <img
+          alt="Mexico Debate Logo"
+          loading="lazy"
+          src={MD}
+          className="banner__logo"
+          width="250px"
+        />
         <h2>
           TORNEO VIRTUAL
           <br /> MEXICO DEBATE 2021
@@ -15,7 +22,10 @@ const Banner = () => {
           <br /> TAMBIÉN LA <b>POLÍTICA DE EQUIDAD</b>
         </p>
       </div>
-      <div className="banner__column banner__art" />
+      <div className="banner__column banner__art">
+        <img src={patron} alt="banner" height="400px" loading="lazy" />
+        <img src={patron} alt="banner" height="400px" loading="lazy" />
+      </div>
     </div>
   );
 };

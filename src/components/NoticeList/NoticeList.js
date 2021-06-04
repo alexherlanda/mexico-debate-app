@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import './Notice.css';
 import PropTypes from 'prop-types';
+import { request } from 'services/request';
+import { READ_NOTICES } from 'services/notices';
 
 function Notice(props) {
   const { source, isLoading, itemKey } = props;
+
+  useEffect(() => {
+    request(READ_NOTICES);
+  }, []);
 
   return (
     <div className="notice-list">
