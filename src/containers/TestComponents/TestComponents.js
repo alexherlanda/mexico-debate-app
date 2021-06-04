@@ -3,6 +3,7 @@ import Card from 'components/SliderCard';
 import Slider from 'components/Slider';
 import WinnerCard from 'components/WinnerCard';
 import Banner from 'components/Banner';
+import NoticeList from 'components/NoticeList';
 
 function TestComponents() {
   return (
@@ -113,6 +114,8 @@ function TestComponents() {
       </Slider>
       <hr />
       <Banner />
+      <br />
+      <NoticeList />
     </>
   );
 }

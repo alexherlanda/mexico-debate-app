@@ -1,5 +1,5 @@
 import React from 'react';
-import MD from './img/MD.png';
+import MD from './img/MXD.svg';
 import './Banner.css';
 const Banner = () => {
   return (
