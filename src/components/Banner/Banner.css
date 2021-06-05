@@ -41,6 +41,7 @@
 
 .banner__art {
   flex-basis: 30%;
+  background: url('./img/patron.svg');
 }
 .banner__art img {
   display: inline-block;

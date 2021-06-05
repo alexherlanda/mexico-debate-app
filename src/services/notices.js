@@ -1,4 +1,5 @@
 const baseURL = 'notifications/';
+
 export const READ_NOTICES = { method: 'GET', path: `${baseURL}?all=true` };
 
 export const READ_NOTICE = ({ noticeId }) => {
@@ -11,6 +12,6 @@ export const ADD_NOTICE = ({ data }) => {
   return { method: 'POST', path: baseURL, data };
 };
 
-export const ADD_BULK_NOTICE = ({ data }) => {
+export const ADD_BULK_NOTICES = ({ data }) => {
   return { method: 'POST', path: `${baseURL}massive`, data };
 };

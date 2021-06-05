@@ -1,6 +1,6 @@
 .main-info-winners {
   background-color: #b64f88;
-  width: 40%;
+  width: 37%;
   min-height: 337px;
   display: inline-block;
   border-radius: 20px;
@@ -10,6 +10,7 @@
   text-align: right;
   padding: 25px;
   box-sizing: border-box;
+  margin-right: 10px;
 }
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */

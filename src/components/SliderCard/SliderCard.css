@@ -9,6 +9,14 @@
 
   margin: 15px;
 }
+.slider-card button {
+  appearance: none;
+  border: none;
+  background: white;
+  border-radius: 40px;
+  width: 100%;
+  padding: 0px;
+}
 
 .slider-card a {
   text-decoration: none;

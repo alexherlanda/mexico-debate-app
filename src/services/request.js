@@ -5,9 +5,11 @@ const defaultOptions = {
 };
 
 export const request = (options) => {
+  let hasBody = options.body ? { body: JSON.stringify(options?.body) } : {};
+
   return fetch(`${process.env.REACT_APP_API_GATEWAY}${options.path}`, {
     ...options,
     ...defaultOptions,
-    params: JSON.stringify(options?.body),
+    ...hasBody,
   }).then((response) => response.json());
 };

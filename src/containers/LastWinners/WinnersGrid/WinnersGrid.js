@@ -90,7 +90,7 @@ function WinnersGrid() {
       >
         <WinnerCard />
       </Slider>
-      <div style={{ marginTop: '1rem' }}></div>
+      <div style={{ marginTop: '1rem' }} />
       <Slider
         items={[
           {

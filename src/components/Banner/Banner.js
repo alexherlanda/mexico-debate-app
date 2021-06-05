@@ -1,6 +1,6 @@
 import React from 'react';
 import MD from './img/MXD.svg';
-import patron from './img/patron.svg';
+// import patron from './img/patron.svg';
 import './Banner.css';
 const Banner = () => {
   return (
@@ -23,8 +23,8 @@ const Banner = () => {
         </p>
       </div>
       <div className="banner__column banner__art">
-        <img src={patron} alt="banner" height="400px" loading="lazy" />
-        <img src={patron} alt="banner" height="400px" loading="lazy" />
+        {/* <img src={patron} alt="banner" height="400px" loading="lazy" />
+        <img src={patron} alt="banner" height="400px" loading="lazy" /> */}
       </div>
     </div>
   );

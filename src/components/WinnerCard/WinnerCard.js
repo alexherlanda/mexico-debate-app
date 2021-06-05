@@ -6,7 +6,7 @@ import winner from './img/winner.png';
 function WinnerCard({ name, from, bg }) {
   return (
     <div className="winner-card">
-      <div className="winner-photo" style={{ backgroundImage: `url(${bg ? bg : winner})` }}></div>
+      <div className="winner-photo" style={{ backgroundImage: `url(${bg ? bg : winner})` }} />
       <div className="winner-description">
         <div className="winner-description-content">
           <h2>{name}</h2>

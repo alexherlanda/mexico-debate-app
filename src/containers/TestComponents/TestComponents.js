@@ -4,7 +4,8 @@ import Slider from 'components/Slider';
 import WinnerCard from 'components/WinnerCard';
 import Banner from 'components/Banner';
 import NoticeList from 'components/NoticeList';
-
+import MotitionList from 'components/MotionList';
+import './styles.css';
 function TestComponents() {
   return (
     <>
@@ -114,8 +115,12 @@ function TestComponents() {
       </Slider>
       <hr />
       <Banner />
-      <br />
-      <NoticeList />
+
+      <div className="wrapper">
+        <NoticeList />
+
+        <MotitionList />
+      </div>
     </>
   );
 }

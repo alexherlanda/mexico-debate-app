@@ -1,0 +1,46 @@
+.motion-item {
+  color: #b63f88;
+  font-family: 'Lato Bold';
+  line-height: 34px;
+  height: 34px;
+  text-align: justify;
+  margin-bottom: 10px;
+  max-width: 400px;
+  font-size: 0.8rem;
+  border: 2px solid #f1f1f1;
+  border-radius: 50px;
+  list-style: none;
+  padding-left: 25px;
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 10px;
+}
+
+.motion-item::before {
+  width: 12px;
+  height: 32px;
+  background: #b63f88;
+  content: 'A';
+  border: 2px solid;
+  position: absolute;
+  border-radius: 20px 0px 0px 20px;
+  margin-left: -27px;
+  margin-top: -1px;
+}
+.motion-list {
+  margin-left: 2rem;
+}
+.motion-list h3 {
+  color: #b63f88;
+}
+
+.motion-list h4 {
+  color: #a2236e;
+}
+
+.notice-item::marker {
+  color: #ff631b;
+}
