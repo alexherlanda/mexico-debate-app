@@ -7,6 +7,7 @@ import {
   TestComponents,
   EducationalMaterials,
   Schedule,
+  MySite
 } from './containers';
 import { Tabs, Banner } from './components';
 
@@ -24,7 +25,7 @@ function App() {
           <Route exact path="/schedule" component={Schedule} />
           <Route exact path="/education" component={EducationalMaterials} />
           <Route exact path="/live" component={Live} />
-          <Route exact path="/my-tournament" component={WIP} />
+          <Route exact path="/my-tournament" component={MySite} />
           <Route exact path="*" component={GeneralInfo} />
         </Switch>
       </Router>

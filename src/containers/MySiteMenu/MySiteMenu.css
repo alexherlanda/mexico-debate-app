@@ -1,0 +1,48 @@
+.my-site-menu {
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  width: 40%;
+  height: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-image: url(./img/patron-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: -10px 102%;
+  background-size: 105%;
+}
+  
+.info-title {
+  color: #b64f88;
+}
+  
+.goto-button {
+  background-color: white;
+  box-shadow: 0 0 5px 1px lightgray;
+  font-size: 1.2rem;
+  color: #b64f88;
+  font-family: Lato light;
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  background-image: url(./img/arrow.svg);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .my-site-menu {
+    width: 100%;
+  }
+}
+  
