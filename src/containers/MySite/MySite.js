@@ -32,7 +32,7 @@ const MySite = () => {
         info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo enim, iaculis sit amet
         egestas vitae, viverra pretium nulla. Nulla varius rutrum nibh ac pharetra."
       />
-      <LoginFrom />
+      <LoginFrom onLogIn={fakeLogIn} />
     </div>
   )
 }

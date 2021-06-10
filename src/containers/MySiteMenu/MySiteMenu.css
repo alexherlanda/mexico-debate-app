@@ -32,6 +32,11 @@
   margin-bottom: 20px;
 }
 
+.goto-link {
+  text-decoration: none;
+  width:  100%;
+}
+
 .arrow {
   background-image: url(./img/arrow.svg);
   width: 20px;

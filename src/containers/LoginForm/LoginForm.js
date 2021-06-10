@@ -8,8 +8,10 @@ const LoginFrom = (props) => {
   const [password, setPassword] = useState('');
 
 
-  const handleOnLogIn = () => {
-    if (onLogIn && typeof onLogIn === 'function') {
+  const handleOnLogIn = (event) => {
+    event.preventDefault()
+    console.log("Hello therwe")
+    if (onLogIn) {
       onLogIn({ user: username, password });
     }
   };
