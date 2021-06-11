@@ -10,7 +10,7 @@ const LoginFrom = (props) => {
 
   const handleOnLogIn = (event) => {
     event.preventDefault()
-    console.log("Hello therwe")
+    
     if (onLogIn) {
       onLogIn({ user: username, password });
     }

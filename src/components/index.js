@@ -8,6 +8,7 @@ import CategorySelector from './CategorySelector';
 import TimeZoneSelector from './TimeZoneSelector';
 import StepsSlider from './StepsSlider';
 import SectionDetail from './SectionDetail';
+import MenuOption from "./MenuOption"
 
 export {
   ActivitiesList,
@@ -19,5 +20,6 @@ export {
   DaySelector,
   StepsSlider,
   Banner,
+  MenuOption,
   SectionDetail
 };

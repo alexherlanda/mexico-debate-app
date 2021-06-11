@@ -1,30 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import axios from '../../services/axios';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import './MySiteMenu.css';
 import { useHistory } from 'react-router';
+import { MenuOption } from '../../components';
 
-const MySiteMenu = (props) => {
+const MySiteMenu = () => {
   const history = useHistory();
-  const { onLogIn } = props;
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleOnLogIn = () => {
-    if (onLogIn && typeof onLogIn === 'function') {
-      onLogIn({ user: username, password });
+  const [activeAction, setActiveAction] = useState('');
+
+  const handleConfirmAssistance = async () => {
+    setActiveAction('confirm');
+    try {
+      const response = await axios({
+        method: 'PUT',
+        url: `${process.env.REACT_APP_API_GATEWAY}users/1 `,
+        data: { secretToken: 1 },
+      });
+      console.log('response', response);
+      toast.success(' Tu asistencia al torneo ha sido confirmada 🚀 ', {
+        position: 'bottom-right',
+        toastId: 'handleConfirmAssistance',
+      });
+    } catch (error) {
+      console.error(error);
+      setActiveAction('');
     }
   };
 
-  const handleConfirmAssistance = () => {
-    toast.success(' Tu asistencia al torneo ha sido confirmada 🚀 ', {
-      position: 'bottom-right',
-      toastId: 'handleConfirmAssistance',
-    });
-  };
-
-  const handleGetAssistanceVCertificate = () => {
+  const handleGetAssistanceCertificate = () => {
     console.log('confirmando asistencia');
   };
 
@@ -36,13 +43,6 @@ const MySiteMenu = (props) => {
     history.push('https://www.postman.com/downloads/');
   };
 
-  const UserAction = ({ label, onClick }) => (
-    <button className="goto-button" onClick={onClick}>
-      {label}
-      <div className="arrow" />
-    </button>
-  );
-
   const UserInfo = ({ name, label, value }) => (
     <>
       <label htmlFor={name}> {label} </label>
@@ -53,14 +53,18 @@ const MySiteMenu = (props) => {
   return (
     <div className="my-site-menu">
       <h2 className="info-title">Mis acciones</h2>
-      <UserAction label="Confirmar mi asistencia" onClick={handleConfirmAssistance} />
-      <UserAction label="Obtener mi comprobante de participacion" />
-      <UserAction label="Obtener  mi diploma" />
-
-      <UserAction label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
+      <MenuOption
+        label="Confirmar mi asistencia"
+        onClick={handleConfirmAssistance}
+        loading={activeAction === 'confirm'}
+      />
+      <MenuOption label="Obtener mi comprobante" />
+      <MenuOption label="Obtener  mi diploma" disabled/>
+      <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
 
       <h2 className="info-title">Mi informacion</h2>
       <UserInfo name="status" label="Mi status en el torneo" />
+      <UserInfo name="coach" label="Mi coach" />
     </div>
   );
 };

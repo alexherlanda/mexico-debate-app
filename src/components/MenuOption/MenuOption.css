@@ -1,0 +1,41 @@
+.menu-option {
+  background-color: white;
+  box-shadow: 0 0 5px 1px lightgray;
+  font-size: 1.2rem;
+  color: #b64f88;
+  font-family: Lato light;
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  text-overflow: clip;
+  cursor: pointer !important;
+}
+
+.menu-option-disabled {
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px 1px lightgray;
+  font-size: 1.2rem;
+  color: #00000040;
+  font-family: Lato light;
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  text-overflow: clip;
+  cursor: not-allowed !important;
+}
+
+.arrow {
+  background-image: url(./img/arrow.svg);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
