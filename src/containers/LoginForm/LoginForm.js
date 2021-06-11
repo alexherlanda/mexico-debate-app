@@ -13,7 +13,7 @@ const LoginFrom = (props) => {
     event.preventDefault();
 
     if (onLogIn) {
-      onLogIn({ user: username, password });
+      onLogIn({ email: username, password });
     }
   };
 

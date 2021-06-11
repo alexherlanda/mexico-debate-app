@@ -7,7 +7,6 @@ import { loginRequest } from 'redux/actions';
 import './MySite.css';
 
 function MySite(props) {
-  console.log('props :>> ', props);
   // TODO: remove next lines and add real behavior to log in
   const { loginRequest: requestLogin } = props;
   const [isLogged, setLogged] = useState(false);

@@ -1,20 +1,19 @@
 import { put, call, takeLatest, cancelled, select, all, fork } from 'redux-saga/effects';
-
+import instance from 'services/axios';
 import { LOGIN_REQUEST } from 'redux/actions';
-
+import { login } from 'services/auth';
 export function* workRegisterIncoming(action) {
-  // const CancelToken = instance.CancelToken;
-  //const source = CancelToken.source();
+  const CancelToken = instance.CancelToken;
+  const source = CancelToken.source();
   try {
     const { payload } = action;
     const { data, onSuccess } = payload;
-    console.log('Data', data);
-    console.log('onSuccess', onSuccess);
+
     if (onSuccess) {
       yield onSuccess();
     }
-    //const response = yield call(registerIncomingInventory, { data, cancelToken: source.token });
-
+    const response = yield call(login, { data, cancelToken: source.token });
+    console.log('response :>> ', response);
     // if (responseOK(response)) {
     // } else {
     // }
