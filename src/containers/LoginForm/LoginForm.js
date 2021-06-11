@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import './LoginForm.css';
+import { FormInput } from '../../components';
 
 const LoginFrom = (props) => {
   const { onLogIn, loading } = props;
@@ -20,18 +21,17 @@ const LoginFrom = (props) => {
     <div className="login-form">
       <h2 className="login-title">Inicia sesión</h2>
       <form>
-        <input
-          placeholder="Usuario"
+        <FormInput
           value={username}
-          required
-          onChange={(e) => setUsername(e.target.value)}
+          label="Ingresa tu usuario"
+          placeHolder="Usuario"
+          onChange={(e) => setUsername(e)}
         />
-        <input
-          placeholder="Contraseña"
-          value={password}
-          type="password"
-          required
-          onChange={(e) => setPassword(e.target.value)}
+        <FormInput
+          value={username}
+          label="Ingresa tu contraseña"
+          placeHolder="Contraseña"
+          onChange={(e) => setPassword(e)}
         />
         <button className="send-button" onClick={handleOnLogIn}>
           {loading ? 'Espere por favor...' : 'Entrar'}

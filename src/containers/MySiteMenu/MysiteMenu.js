@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import './MySiteMenu.css';
 import { useHistory } from 'react-router';
-import { MenuOption } from '../../components';
+import { MenuOption, FormInput } from '../../components';
 
 const MySiteMenu = () => {
   const history = useHistory();
@@ -63,8 +63,9 @@ const MySiteMenu = () => {
       <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
 
       <h2 className="info-title">Mi informacion</h2>
-      <UserInfo name="status" label="Mi status en el torneo" />
-      <UserInfo name="coach" label="Mi coach" />
+
+      <FormInput name="status" label="Mi status en el torneo"  />
+      <FormInput name="coach" label="Mi coach" />
     </div>
   );
 };
