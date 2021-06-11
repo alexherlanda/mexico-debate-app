@@ -7,7 +7,7 @@ import './MySiteMenu.css';
 import { useHistory } from 'react-router';
 import { MenuOption, FormInput } from '../../components';
 
-const MySiteMenu = () => {
+const MySiteMenu = ({ userInfo }) => {
   const history = useHistory();
 
   const [activeAction, setActiveAction] = useState('');
@@ -40,13 +40,13 @@ const MySiteMenu = () => {
   };
 
   const handleGoToTabbieCat = () => {
-    history.push('https://www.postman.com/downloads/');
+    //history.push('https://www.postman.com/downloads/');
   };
 
-  const UserInfo = ({ name, label, value }) => (
+  const UserInfo = ({ name, label, value, disabled }) => (
     <>
       <label htmlFor={name}> {label} </label>
-      <input name={name} placeholder={label} value={value} />
+      <input name={name} placeholder={label} value={value} disabled={disabled} />
     </>
   );
 
@@ -59,12 +59,11 @@ const MySiteMenu = () => {
         loading={activeAction === 'confirm'}
       />
       <MenuOption label="Obtener mi comprobante" />
-      <MenuOption label="Obtener  mi diploma" disabled/>
+      <MenuOption label="Obtener  mi diploma" disabled />
       <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
 
       <h2 className="info-title">Mi informacion</h2>
-
-      <FormInput name="status" label="Mi status en el torneo"  />
+      <FormInput name="status" label="Mi status en el torneo" />
       <FormInput name="coach" label="Mi coach" />
     </div>
   );

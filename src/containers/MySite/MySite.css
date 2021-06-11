@@ -1,5 +1,6 @@
 .my-site {
-  padding: 30px 10%;
+  flex-direction: column;
+  padding: 30px 0%;
   width: 90%;
   margin: auto;
   display: flex;
@@ -9,29 +10,15 @@
   margin-top: 2rem;
   margin-bottom: 5rem;
 }
-.login-form{
+.login-form {
   margin-top: 0rem;
 }
 
-@media screen and (min-width: 768px) {
-  .schedule {
-    width: 70%;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 768px) {
+/* Large Screens */
+@media screen and (min-width: 680px) {
   .my-site {
-    flex-direction: column;
-    width: 100%;
-    margin-top: 0rem;
-  }
-  .section-detail{
-    height: 230px;
-    min-height:250px;
-    padding:25px;
-  }
-  .login-form{
-    margin-bottom: 20rem;
+    flex-direction: row;
+    padding: 30px 10%;
+    width: 90%;
   }
 }
