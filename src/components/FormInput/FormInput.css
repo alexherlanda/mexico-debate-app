@@ -1,0 +1,27 @@
+.input-label {
+  display: flex;
+  flex-direction: column;
+  height: 5.5rem;
+  justify-content: space-between;
+  font-family: Biko bold;
+  color: #b64f88;
+  font-size: 1rem;
+}
+
+input {
+  margin: 0px 0px 25px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 5px 1px lightgray;
+  color: #b64f88;
+  height: 2.5rem;
+  padding: 0 10px;
+  font-family: Lato light;
+  font-size: 1.2rem;
+}
+
+input::-webkit-input-placeholder{
+  color: #b64f88 !important;
+  margin: 10px;
+  font-size: 1.2rem !important;
+}

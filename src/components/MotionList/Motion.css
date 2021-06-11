@@ -1,11 +1,16 @@
+
+.motion-list{
+  width: 100%;
+}
 .motion-item {
   color: #b63f88;
   font-family: 'Lato Bold';
   line-height: 34px;
   height: 34px;
   text-align: justify;
+  margin: 0 auto;
   margin-bottom: 10px;
-  max-width: 400px;
+  max-width: 600px;
   font-size: 0.8rem;
   border: 2px solid #f1f1f1;
   border-radius: 50px;
@@ -17,6 +22,8 @@
   overflow: hidden;
   white-space: nowrap;
   padding-right: 10px;
+  
+
 }
 
 .motion-item::before {
@@ -43,4 +50,31 @@
 
 .notice-item::marker {
   color: #ff631b;
+}
+
+@media only screen and (max-width: 768px) {
+  .motion-item {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow: visible;
+    white-space: initial;
+    line-height: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+    padding-top: 11px;
+  }
+  .motion-item::before {
+    width: 12px;
+    height: 45px;
+    background: #b63f88;
+    content: 'A';
+    border: 2px solid;
+    position: absolute;
+    border-radius: 20px 0px 0px 20px;
+    margin-left: -25px;
+    margin-top: -11px;
+  }
+  .motion-list{
+    margin-left: 0rem;
+  }
 }

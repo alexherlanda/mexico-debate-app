@@ -1,0 +1,41 @@
+.notice-list {
+  width: 100%;
+  list-style: none;
+}
+
+.notice-list__container {
+  max-height: 250px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+
+.notice-list__container ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.notice-list__item {
+  color: #b63f88;
+  font-family: 'Lato Light';
+  line-height: 20px;
+  text-transform: uppercase;
+  padding-left: 10px;
+  text-align: left;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  list-style: none;
+  background-color: white;
+  box-shadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12)';
+}
+
+.notice-list h3 {
+  text-align: start;
+  color: #b63f88;
+}
+
+.notice-item::marker {
+  color: #ff631b;
+}

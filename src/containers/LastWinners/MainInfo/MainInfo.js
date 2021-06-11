@@ -1,5 +1,6 @@
 import React from 'react';
 import './MainInfo.css';
+
 function MainInfo() {
   return (
     <div className="main-info-winners">

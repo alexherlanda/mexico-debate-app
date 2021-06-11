@@ -7,15 +7,18 @@
   justify-content: space-between;
   box-sizing: border-box;
   align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
-
-
+.login-form {
+  margin-top: 0rem;
+}
 
 /* Large Screens */
 @media screen and (min-width: 680px) {
   .my-site {
     flex-direction: row;
     padding: 30px 10%;
-  width: 90%;
+    width: 90%;
   }
 }

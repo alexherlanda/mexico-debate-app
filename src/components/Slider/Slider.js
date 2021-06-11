@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import PropTypes from 'prop-types';
 import Card from 'components/SliderCard';
+import "./Slider.css";
 const configResponsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },

@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
 import './LoginForm.css';
+import { FormInput } from '../../components';
 
 const LoginFrom = (props) => {
-  const { onLogIn } = props;
+  const { onLogIn, loading } = props;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-
   const handleOnLogIn = (event) => {
-    event.preventDefault()
-    
+    event.preventDefault();
+
     if (onLogIn) {
-      onLogIn({ user: username, password });
+      onLogIn({ email: username, password });
     }
   };
 
@@ -20,31 +21,33 @@ const LoginFrom = (props) => {
     <div className="login-form">
       <h2 className="login-title">Inicia sesión</h2>
       <form>
-        <input
-          placeholder="Usuario"
+        <FormInput
           value={username}
-          required
-          onChange={(e) => setUsername(e.target.value)}
+          label="Ingresa tu usuario"
+          placeHolder="Usuario"
+          onChange={(e) => setUsername(e)}
         />
-        <input
-          placeholder="Contraseña"
+        <FormInput
           value={password}
-          type="password"
-          required
-          onChange={(e) => setPassword(e.target.value)}
+          label="Ingresa tu contraseña"
+          placeHolder="Contraseña"
+          onChange={(e) => setPassword(e)}
+          isPassword
         />
-        <button className="send-button" onClick={handleOnLogIn}>Log in</button>
+        <button className="send-button" onClick={handleOnLogIn}>
+          {loading ? 'Espere por favor...' : 'Entrar'}
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-LoginFrom.PropTypes = {
-  onLogIn: PropTypes.func
+LoginFrom.propTypes = {
+  onLogIn: PropTypes.func,
 };
 
 LoginFrom.defaultProps = {
-  onLogIn: null
-}
+  onLogIn: null,
+};
 
 export default LoginFrom;

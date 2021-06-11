@@ -5,9 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import './MySiteMenu.css';
 import { useHistory } from 'react-router';
-import { MenuOption } from '../../components';
+import { MenuOption, FormInput } from '../../components';
 
-const MySiteMenu = ({userInfo}) => {
+const MySiteMenu = ({ userInfo }) => {
   const history = useHistory();
 
   const [activeAction, setActiveAction] = useState('');
@@ -59,12 +59,12 @@ const MySiteMenu = ({userInfo}) => {
         loading={activeAction === 'confirm'}
       />
       <MenuOption label="Obtener mi comprobante" />
-      <MenuOption label="Obtener  mi diploma" disabled/>
+      <MenuOption label="Obtener  mi diploma" disabled />
       <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
 
       <h2 className="info-title">Mi informacion</h2>
-      <UserInfo disabled name="status" label="Mi status en el torneo" value={userInfo?.status ?? 'No se encontro tu nombre'} />
-      <UserInfo disabled name="coach" label="Mi coach" value={userInfo?.coach ?? 'No hay coach asignado'} />
+      <FormInput name="status" label="Mi status en el torneo" />
+      <FormInput name="coach" label="Mi coach" />
     </div>
   );
 };
