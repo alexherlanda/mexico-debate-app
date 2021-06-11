@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './Notice.css';
+import './NoticeList.css';
 import { request } from 'services/request';
 import Loader from 'components/Loader';
 import { READ_NOTICES } from 'services/notices';
@@ -17,7 +17,7 @@ function Notice() {
           setSource({ isLoading: false, data: results.data?.notifications });
         }, 600);
       } catch (error) {
-        console.warn('Ocurrió un erro al leer las notificaciones');
+        console.warn('Ocurrió un error al leer las notificaciones');
       }
     };
     notices();
@@ -25,8 +25,9 @@ function Notice() {
 
   const generateList = () => {
     return source.data.map((item) => (
-      <li className="notice-item" key={item?._id}>
-        {item.message}
+      <li className="notice-list__item " key={item?._id}>
+        <div className="item__notification">{item.message}</div>
+        <div className="item__metadata"> 05/03/21 10:22 </div>
       </li>
     ));
   };
