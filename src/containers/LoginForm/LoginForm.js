@@ -32,6 +32,7 @@ const LoginFrom = (props) => {
           label="Ingresa tu contraseña"
           placeHolder="Contraseña"
           onChange={(e) => setPassword(e)}
+          isPassword
         />
         <button className="send-button" onClick={handleOnLogIn}>
           {loading ? 'Espere por favor...' : 'Entrar'}

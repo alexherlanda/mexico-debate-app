@@ -8,7 +8,8 @@ const FormInput = (props) => {
     value,
     label,
     placeHolder,
-    name
+    name,
+    isPassword
   } = props;
 
   const handleOnChange = (e) => {
@@ -22,6 +23,7 @@ const FormInput = (props) => {
         placeholder={placeHolder || name}
         value={value}
         onChange={handleOnChange}
+        type={isPassword ? 'password' : ''}
       />
     </label>
   )
@@ -32,7 +34,8 @@ FormInput.propTypes = {
   value: PropTypes.string,
   label: PropTypes.string,
   placeHolder: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
+  isPassword: PropTypes.bool
 };
 
 export default FormInput;
