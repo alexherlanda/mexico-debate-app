@@ -28,7 +28,7 @@ const LoginFrom = (props) => {
           onChange={(e) => setUsername(e)}
         />
         <FormInput
-          value={username}
+          value={password}
           label="Ingresa tu contraseña"
           placeHolder="Contraseña"
           onChange={(e) => setPassword(e)}
