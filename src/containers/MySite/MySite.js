@@ -13,15 +13,19 @@ const MySite = () => {
     console.log(user, password);
   }
 
+  const userInfo = {
+    name: "Alexis", status: "Inscrito",  coach: "Mark"
+  }
+
   if (isLogged) {
     return (
       <div className="my-site">
         <SectionDetail
           centerInfo
-          title="Bienvenido Usuario"
+          title={`Hola ${userInfo?.name}`}
           info="Esperamos que tengas un gran torneo"
         />
-        <MySiteMenu />
+        <MySiteMenu userInfo={userInfo} />
       </div>
     )
   }
@@ -32,7 +36,7 @@ const MySite = () => {
         info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo enim, iaculis sit amet
         egestas vitae, viverra pretium nulla. Nulla varius rutrum nibh ac pharetra."
       />
-      <LoginFrom onLogIn={fakeLogIn} />
+      <LoginFrom onLogIn={fakeLogIn}  />
     </div>
   )
 }
