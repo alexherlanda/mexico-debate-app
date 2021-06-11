@@ -2,16 +2,28 @@ import React, { useState } from 'react';
 import { SectionDetail } from '../../components';
 import LoginFrom from '../LoginForm';
 import MySiteMenu from '../MySiteMenu';
+import { connect } from 'react-redux';
+import { loginRequest } from 'redux/actions';
 import './MySite.css';
 
-const MySite = () => {
+function MySite(props) {
+  console.log('props :>> ', props);
   // TODO: remove next lines and add real behavior to log in
+  const { loginRequest: requestLogin } = props;
   const [isLogged, setLogged] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const fakeLogIn = (userData) => {
-    const {user, password} = userData;
-    setLogged(true);
-    console.log(user, password);
-  }
+    setIsLoading(true);
+    requestLogin({
+      onSuccess: () => {
+        setTimeout(() => {
+          setLogged(true);
+          setIsLoading(false);
+        }, 800);
+      },
+      data: userData,
+    });
+  };
 
   if (isLogged) {
     return (
@@ -23,7 +35,7 @@ const MySite = () => {
         />
         <MySiteMenu />
       </div>
-    )
+    );
   }
   return (
     <div className="my-site">
@@ -32,9 +44,9 @@ const MySite = () => {
         info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo enim, iaculis sit amet
         egestas vitae, viverra pretium nulla. Nulla varius rutrum nibh ac pharetra."
       />
-      <LoginFrom onLogIn={fakeLogIn} />
+      <LoginFrom onLogIn={fakeLogIn} loading={isLoading} />
     </div>
-  )
+  );
 }
 
-export default MySite;
+export default connect(null, { loginRequest })(MySite);

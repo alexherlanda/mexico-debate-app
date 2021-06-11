@@ -12,8 +12,9 @@ function MotionList() {
       setSource({ isLoading: true });
       try {
         const results = await request(READ_MOTIONS);
+     
         setTimeout(() => {
-          setSource({ isLoading: false, data: results.motions });
+          setSource({ isLoading: false, data: results.data?.motions });
         }, 600);
       } catch (error) {
         console.warn('Ocurrió un erro al leer las notificaciones');

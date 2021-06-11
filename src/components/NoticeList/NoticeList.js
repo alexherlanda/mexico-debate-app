@@ -12,8 +12,9 @@ function Notice() {
       setSource({ isLoading: true });
       try {
         const results = await request(READ_NOTICES);
+        console.log('results :>> ', results);
         setTimeout(() => {
-          setSource({ isLoading: false, data: results.notifications });
+          setSource({ isLoading: false, data: results.data?.notifications });
         }, 600);
       } catch (error) {
         console.warn('Ocurrió un erro al leer las notificaciones');
@@ -33,7 +34,7 @@ function Notice() {
   return (
     <div className="notice-list">
       {source.isLoading && <Loader />}
-      {!source.isLoading && source.data.length > 0 && (
+      {!source.isLoading && source.data?.length > 0 && (
         <>
           <h3>Avisos</h3>
           <ul>{generateList()}</ul>

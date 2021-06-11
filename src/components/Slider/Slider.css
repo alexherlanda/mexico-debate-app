@@ -1,0 +1,7 @@
+.winners-grid .react-multiple-carousel__arrow{
+    min-width: 25px !important;
+    min-height: 25px !important;
+}
+.react-multiple-carousel__arrow::before{
+    font-size: 14px;
+}

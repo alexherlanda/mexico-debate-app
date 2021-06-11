@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
 import './LoginForm.css';
 
 const LoginFrom = (props) => {
-  const { onLogIn } = props;
+  const { onLogIn, loading } = props;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-
   const handleOnLogIn = (event) => {
-    event.preventDefault()
-    
+    event.preventDefault();
+
     if (onLogIn) {
       onLogIn({ user: username, password });
     }
@@ -33,18 +33,20 @@ const LoginFrom = (props) => {
           required
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="send-button" onClick={handleOnLogIn}>Log in</button>
+        <button className="send-button" onClick={handleOnLogIn}>
+          {loading ? 'Espere por favor...' : 'Entrar'}
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-LoginFrom.PropTypes = {
-  onLogIn: PropTypes.func
+LoginFrom.propTypes = {
+  onLogIn: PropTypes.func,
 };
 
 LoginFrom.defaultProps = {
-  onLogIn: null
-}
+  onLogIn: null,
+};
 
 export default LoginFrom;
