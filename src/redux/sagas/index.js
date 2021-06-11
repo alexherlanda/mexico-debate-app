@@ -13,12 +13,12 @@ export function* workRegisterIncoming(action) {
       yield onSuccess();
     }
     const response = yield call(login, { data, cancelToken: source.token });
-    console.log('response :>> ', response);
+    // console.log('response :>> ', response);
     // if (responseOK(response)) {
     // } else {
     // }
   } catch (_error) {
-    console.log('_error :>> ', _error);
+    // console.log('_error :>> ', _error);
     //yield put(registerIncomingFail());
   } finally {
     if (yield cancelled()) {
