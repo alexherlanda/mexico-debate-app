@@ -41,7 +41,7 @@ function MySite(props) {
 
   useEffect(() => {
     let userLocal = JSON.parse(localStorage.getItem('user'));
-    if (userLocal?._id) {
+    if (userLocal?.id) {
       setLogged(true);
       getProfile({ userId: userLocal?.id });
     }

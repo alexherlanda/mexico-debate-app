@@ -21,7 +21,7 @@ const MySiteMenu = ({ userInfo }) => {
         url: `/users/${userInfo?.id}`,
         data: {
           user: {
-            status: 2,
+            status: statusEnum[5].value,
           },
         },
       });
@@ -78,12 +78,29 @@ const MySiteMenu = ({ userInfo }) => {
     //history.push('https://www.postman.com/downloads/');
   };
 
-  const UserInfo = ({ name, label, value, disabled }) => (
-    <>
-      <label htmlFor={name}> {label} </label>
-      <input name={name} placeholder={label} value={value} disabled={disabled} />
-    </>
-  );
+  const statusEnum = {
+    0: { label: 'Sin definir', value: 0 },
+    1: {
+      label: 'En lista de espera',
+      value: 1,
+    },
+    2: {
+      label: 'Equipo buscando integrantes',
+      value: 2,
+    },
+    3: {
+      label: 'Equipo abierto',
+      value: 3,
+    },
+    4: {
+      label: 'Equipo pre-inscrito',
+      value: 4,
+    },
+    5: {
+      label: 'Equipo registrado',
+      value: 5,
+    },
+  };
 
   return (
     <div className="my-site-menu">
@@ -102,7 +119,12 @@ const MySiteMenu = ({ userInfo }) => {
       <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
 
       <h2 className="info-title">Mi informacion</h2>
-      <FormInput disbaled value={userStatus} name="status" label="Mi status en el torneo" />
+      <FormInput
+        disbaled
+        value={statusEnum[userStatus].label}
+        name="status"
+        label="Mi status en el torneo"
+      />
       <FormInput disbaled value={userInfo?.coachName} name="coach" label="Mi coach" />
     </div>
   );
