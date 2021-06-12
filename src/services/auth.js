@@ -7,3 +7,10 @@ export async function login({ data, cancelToken }) {
     cancelToken,
   });
 }
+
+export async function profile({ userId, cancelToken }) {
+  return axios(`users/${userId}`, {
+    method: 'GET',
+    cancelToken,
+  });
+}

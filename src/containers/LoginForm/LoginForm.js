@@ -34,7 +34,7 @@ const LoginFrom = (props) => {
           onChange={(e) => setPassword(e)}
           isPassword
         />
-        <button className="send-button" onClick={handleOnLogIn}>
+        <button className="send-button" onClick={handleOnLogIn} disabled={loading}>
           {loading ? 'Espere por favor...' : 'Entrar'}
         </button>
       </form>

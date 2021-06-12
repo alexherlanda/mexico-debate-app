@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SectionDetail } from '../../components';
 import LoginFrom from '../LoginForm';
 import MySiteMenu from '../MySiteMenu';
 import { connect } from 'react-redux';
-import { loginRequest } from 'redux/actions';
+import { loginRequest, profileRequest } from 'redux/actions';
 import { toast } from 'react-toastify';
 
 import './MySite.css';
 
 function MySite(props) {
   // TODO: remove next lines and add real behavior to log in
-  const { loginRequest: requestLogin } = props;
+  const { loginRequest: requestLogin, user, profileRequest: getProfile } = props;
+
   const [isLogged, setLogged] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const fakeLogIn = (userData) => {
+  const logIn = (userData) => {
     setIsLoading(true);
     if (requestLogin)
       requestLogin({
@@ -38,6 +39,19 @@ function MySite(props) {
       });
   };
 
+  useEffect(() => {
+    try {
+      let userLocal = JSON.parse(localStorage.getItem('user'));
+      if (user) {
+        setLogged(true);
+      } else {
+        getProfile({ userId: userLocal?._id });
+      }
+    } catch (_error) {
+      console.log('Error', _error);
+    }
+  }, [getProfile, user]);
+
   const userInfo = {
     name: 'Alexis',
     status: 'Inscrito',
@@ -49,7 +63,7 @@ function MySite(props) {
       <div className="my-site">
         <SectionDetail
           centerInfo
-          title={`Hola ${userInfo?.name}`}
+          title={`Hola ${user?.data?.email}`}
           info="Esperamos que tengas un gran torneo"
         />
         <MySiteMenu userInfo={userInfo} />
@@ -64,9 +78,15 @@ function MySite(props) {
         egestas vitae, viverra pretium nulla. Nulla varius rutrum nibh ac pharetra."
       />
 
-      <LoginFrom onLogIn={fakeLogIn} loading={isLoading} />
+      <LoginFrom onLogIn={logIn} loading={isLoading} />
     </div>
   );
 }
 
-export default connect(null, { loginRequest })(MySite);
+function mapStateToProps(state) {
+  return {
+    user: state?.user,
+  };
+}
+
+export default connect(mapStateToProps, { loginRequest, profileRequest })(MySite);
