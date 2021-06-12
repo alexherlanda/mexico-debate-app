@@ -1,22 +1,36 @@
 import { put, call, takeLatest, cancelled, select, all, fork } from 'redux-saga/effects';
 import instance from 'services/axios';
-import { LOGIN_REQUEST } from 'redux/actions';
+import { LOGIN_REQUEST, loginSuccess, loginFail } from 'redux/actions';
 import { login } from 'services/auth';
+
 export function* workRegisterIncoming(action) {
   const CancelToken = instance.CancelToken;
   const source = CancelToken.source();
   try {
     const { payload } = action;
-    const { data, onSuccess } = payload;
+    const { data, onSuccess, onFail } = payload;
 
-    if (onSuccess) {
-      yield onSuccess();
-    }
     const response = yield call(login, { data, cancelToken: source.token });
-    // console.log('response :>> ', response);
-    // if (responseOK(response)) {
-    // } else {
-    // }
+
+    if (response?.data?.data) {
+      if (onSuccess) {
+        yield onSuccess(response.data.data.user.email);
+      }
+      yield put(loginSuccess());
+
+      const tokenR = response.data.token;
+      let user = response.data.data.user;
+
+      localStorage.setItem('token', tokenR);
+      localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      if (onFail) {
+        yield onFail();
+      }
+    }
+
+    // yield put(setSession());
+    // yield put(userSetData(user));
   } catch (_error) {
     // console.log('_error :>> ', _error);
     //yield put(registerIncomingFail());

@@ -8,3 +8,17 @@ export function loginRequest(payload) {
     payload,
   };
 }
+
+export function loginSuccess(payload) {
+  return {
+    type: LOGIN_SUCCESS,
+    payload,
+  };
+}
+
+export function loginFail(payload) {
+  return {
+    type: LOGIN_FAIL,
+    payload,
+  };
+}

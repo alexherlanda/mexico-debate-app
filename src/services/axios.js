@@ -10,7 +10,14 @@ customAxios.isCancel = axios.isCancel;
 const requestHandler = (request) => {
   // Token will be dynamic so we can use any app-specific way to always
   // fetch the new token before making the call
-  //request.headers.Authorization = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTIzNDU2Nzg5IiwibmFtZSI6IlNhbXBsZSIsImlhdCI6MTUxNjIzODIzfQ.ZEBwz4pWYGqgFJc6DIi7HdTN0z5Pfs4Lcv4ZNwMr1rs';
+  try {
+    let token = localStorage.getItem('tokenn');
+    if (token && token !== '' && !request.notBearer) {
+      customAxios.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+  } catch (_error) {
+    delete customAxios.headers.common['Authorization'];
+  }
 
   return request;
 };
@@ -37,6 +44,7 @@ const errorHandler = (error) => {
 
 customAxios.interceptors.response.use(
   (response) => responseHandler(response),
+  (request) => requestHandler(request),
   (error) => errorHandler(error)
 );
 

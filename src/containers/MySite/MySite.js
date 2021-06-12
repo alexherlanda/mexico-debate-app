@@ -4,6 +4,8 @@ import LoginFrom from '../LoginForm';
 import MySiteMenu from '../MySiteMenu';
 import { connect } from 'react-redux';
 import { loginRequest } from 'redux/actions';
+import { toast } from 'react-toastify';
+
 import './MySite.css';
 
 function MySite(props) {
@@ -15,11 +17,22 @@ function MySite(props) {
     setIsLoading(true);
     if (requestLogin)
       requestLogin({
-        onSuccess: () => {
+        onSuccess: (userName) => {
           setTimeout(() => {
             setLogged(true);
             setIsLoading(false);
+            toast.success(`Bienvenido ${userName}`, {
+              position: 'bottom-right',
+              toastId: 's',
+            });
           }, 800);
+        },
+        onFail: () => {
+          toast.error('Lo sentimos no pudimos iniciar sesión,favor de verificar sus datos', {
+            position: 'bottom-right',
+            toastId: 's',
+          });
+          setIsLoading(false);
         },
         data: userData,
       });
