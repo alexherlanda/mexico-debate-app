@@ -12,7 +12,7 @@ function Notice() {
       setSource({ isLoading: true });
       try {
         const results = await request(READ_NOTICES);
-        console.log('results :>> ', results);
+
         setTimeout(() => {
           setSource({ isLoading: false, data: results.data?.notifications });
         }, 600);
