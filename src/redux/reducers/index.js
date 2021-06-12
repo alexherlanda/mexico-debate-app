@@ -25,7 +25,7 @@ export default (state = defaultState, action) => {
         ...state,
         user: {
           isLoading: true,
-          data: null,
+          data: false,
         },
       };
     case PROFILE_SUCCESS:

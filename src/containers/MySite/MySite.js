@@ -40,17 +40,12 @@ function MySite(props) {
   };
 
   useEffect(() => {
-    try {
-      let userLocal = JSON.parse(localStorage.getItem('user'));
-      if (user) {
-        setLogged(true);
-      } else {
-        getProfile({ userId: userLocal?._id });
-      }
-    } catch (_error) {
-      console.log('Error', _error);
+    let userLocal = JSON.parse(localStorage.getItem('user'));
+    if (userLocal?._id) {
+      setLogged(true);
+      getProfile({ userId: userLocal?._id });
     }
-  }, [getProfile, user]);
+  }, [getProfile]);
 
   const userInfo = {
     name: 'Alexis',

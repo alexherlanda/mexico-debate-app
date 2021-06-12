@@ -1,8 +1,12 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { cleanLocalStorage } from 'utils';
 
 const customAxios = axios.create({
   baseURL: process.env.REACT_APP_API_GATEWAY,
+  validateStatus: function (status) {
+    return status < 500;
+  },
   //headers: { 'api-key': 'eyJz-CI6Ikp-4pWY-lhdCI6' }
 });
 customAxios.CancelToken = axios.CancelToken;
@@ -24,15 +28,15 @@ const requestHandler = (request) => {
 
 const responseHandler = (response) => {
   if (response.status === 401) {
-    window.location = '/login';
+    toast.error('El token ha expirado', { position: 'bottom-right', toastId: '401' });
+    cleanLocalStorage();
+    //window.location = '/login';
   }
 
   return response;
 };
 
 const errorHandler = (error) => {
-  console.log(error);
-  // toast.error(error.message, { position: 'bottom-right', toastId: error });
   return Promise.reject(error);
 };
 
@@ -43,7 +47,6 @@ customAxios.interceptors.request.use(
 
 customAxios.interceptors.response.use(
   (response) => responseHandler(response),
-
   (error) => errorHandler(error)
 );
 
