@@ -5,7 +5,7 @@
 .motion-container-list {
   height: 300px;
   max-height: 400px;
-  position: absolute;
+  padding-right: 15px;
   overflow-y: scroll;
   width: 80%;
   margin: 0 auto;
@@ -30,18 +30,7 @@
   overflow: hidden;
   white-space: nowrap;
   padding-right: 10px;
-}
-
-.motion-item::before {
-  width: 12px;
-  height: 32px;
-  background: #b63f88;
-  content: 'A';
-  border: 2px solid;
-  position: absolute;
-  border-radius: 20px 0px 0px 20px;
-  margin-left: -27px;
-  margin-top: -1px;
+  background: linear-gradient(90deg, #b63f88, #b63f88 2.5%, rgba(255,255,255,0) 2.5%);
 }
 
 .motion-list h3 {
@@ -67,16 +56,8 @@
     padding-bottom: 3px;
     padding-top: 11px;
   }
-  .motion-item::before {
-    width: 12px;
-    height: 45px;
-    background: #b63f88;
-    content: 'A';
-    border: 2px solid;
-    position: absolute;
-    border-radius: 20px 0px 0px 20px;
-    margin-left: -25px;
-    margin-top: -11px;
+  .motion-item {
+    background: linear-gradient(90deg, #b63f88, #b63f88 6%, rgba(255,255,255,0) 6%);
   }
   .motion-list {
     margin-left: 0rem;

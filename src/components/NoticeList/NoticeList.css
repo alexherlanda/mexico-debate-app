@@ -1,15 +1,18 @@
 .notice-list {
-  width: 100%;
+  width: 60%;
   list-style: none;
+  margin: auto;
 }
 
 .notice-list__container {
-  max-height: 250px;
+  max-height: 300px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   overflow-y: scroll;
   flex-direction: column;
+  padding: 0 15px 0px 2px;
+  box-sizing: border-box;
 }
 
 .notice-list__container ul {
@@ -19,16 +22,21 @@
 
 .notice-list__item {
   color: #b63f88;
-  font-family: 'Lato Light';
+  font-family: Lato Light;
   line-height: 20px;
   text-transform: uppercase;
   padding-left: 10px;
   text-align: left;
   margin-bottom: 10px;
+  margin-top: 5px;
   font-size: 0.8rem;
   list-style: none;
   background-color: white;
-  box-shadow: '0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12)';
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,.22);
 }
 
 .notice-list h3 {
@@ -38,4 +46,21 @@
 
 .notice-item::marker {
   color: #ff631b;
+}
+
+.item__notification {
+  padding-bottom: 5px;
+}
+
+.item__metadata {
+  font-weight: bold;
+  color: #b4b4b5;
+  font-size: 0.75rem;
+}
+
+
+@media screen and (max-width: 760px) {
+  .notice-list {
+    width: 90%;
+  }
 }
