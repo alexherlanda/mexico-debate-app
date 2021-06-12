@@ -1,4 +1,11 @@
 section {
   justify-content: left !important;
   align-items: flex-start !important;
+  width: 100%;
+}
+
+.live-container {
+  position: absolute;
+  margin: auto;
+  width: 100%;
 }

@@ -1,0 +1,17 @@
+.educational-materials {
+  width: 70%;
+  margin: auto;
+  color: #b64f88;
+}
+
+@media screen and (max-width: 768px) {
+  .educational-materials {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .educational-materials {
+    width: 60%;
+  }
+}
