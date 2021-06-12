@@ -1,5 +1,6 @@
 import React from 'react';
 import './MenuOption.css';
+import arrow from './img/arrow.svg';
 
 const MenuOption = ({ loading, disabled, label, onClick }) => {
   return (
@@ -9,7 +10,7 @@ const MenuOption = ({ loading, disabled, label, onClick }) => {
       disabled={disabled || loading}
     >
       {label}
-      <div className="arrow" />
+      <div className={loading ? 'loader' : 'arrow'} />
     </button>
   );
 };

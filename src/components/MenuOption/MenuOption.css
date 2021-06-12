@@ -9,14 +9,13 @@
   height: 2.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 20px;
   text-overflow: clip;
   cursor: pointer !important;
 }
 
 .menu-option-disabled {
-  background-color: #f5f5f5;
   box-shadow: 0 0 5px 1px lightgray;
   font-size: 1.2rem;
   color: #00000040;
@@ -33,9 +32,19 @@
 }
 
 .arrow {
-  background-image: url(./img/tail-spin.svg);
-  width: 20px;
-  height: 20px;
+  background-image: url(./img/arrow.svg);
+  width: 25px;
+  height: 25px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
+}
+
+.loader {
+  background-image: url(./img/tail-spin.svg);
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }

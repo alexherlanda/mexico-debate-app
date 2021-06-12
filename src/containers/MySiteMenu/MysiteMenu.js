@@ -17,7 +17,7 @@ const MySiteMenu = ({ userInfo }) => {
     try {
       const response = await axios({
         method: 'PATCH',
-        url: `/users/${userInfo?._id}`,
+        url: `/users/${userInfo?.id}`,
         data: {
           user: {
             status: 2,
@@ -48,7 +48,7 @@ const MySiteMenu = ({ userInfo }) => {
     try {
       const response = await axios({
         method: 'GET',
-        url: `/users/${userInfo?._id}/justificante`,
+        url: `/users/${userInfo?.id}/justificante`,
       });
       if (response.status === 200) {
         const base64 = response?.data?.data?.justificante;

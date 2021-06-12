@@ -43,7 +43,7 @@ function MySite(props) {
     let userLocal = JSON.parse(localStorage.getItem('user'));
     if (userLocal?._id) {
       setLogged(true);
-      getProfile({ userId: userLocal?._id });
+      getProfile({ userId: userLocal?.id });
     }
   }, [getProfile]);
 

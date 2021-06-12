@@ -31,7 +31,7 @@ export function* workLoginRequest(action) {
       localStorage.setItem('token', tokenR);
       localStorage.setItem('user', JSON.stringify(user));
 
-      yield put(profileRequest({ userId: response.data.data.user?._id }));
+      yield put(profileRequest({ userId: response.data.data.user?.id }));
     } else {
       if (onFail) {
         yield onFail();
