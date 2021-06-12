@@ -11,6 +11,7 @@ const customAxios = axios.create({
 });
 customAxios.CancelToken = axios.CancelToken;
 customAxios.isCancel = axios.isCancel;
+
 const requestHandler = (request) => {
   // Token will be dynamic so we can use any app-specific way to always
   // fetch the new token before making the call

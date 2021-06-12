@@ -16,23 +16,55 @@ const MySiteMenu = ({ userInfo }) => {
     setActiveAction('confirm');
     try {
       const response = await axios({
-        method: 'PUT',
-        url: `${process.env.REACT_APP_API_GATEWAY}users/1 `,
-        data: { secretToken: 1 },
+        method: 'PATCH',
+        url: `/users/${userInfo?._id}`,
+        data: {
+          user: {
+            status: 2,
+          },
+        },
       });
-      console.log('response', response);
-      toast.success(' Tu asistencia al torneo ha sido confirmada 🚀 ', {
-        position: 'bottom-right',
-        toastId: 'handleConfirmAssistance',
-      });
+      if (response.status === 200) {
+        toast.success(' Tu asistencia al torneo ha sido confirmada 🚀 ', {
+          position: 'bottom-right',
+          toastId: 'handleConfirmAssistance',
+        });
+        setActiveAction('');
+      } else {
+        toast.error(' Lo sentimos, algo salio mal :( Intente mas tarde ', {
+          position: 'bottom-right',
+          toastId: 'handleConfirmAssistance',
+        });
+        setActiveAction('');
+      }
     } catch (error) {
       console.error(error);
       setActiveAction('');
     }
   };
 
-  const handleGetAssistanceCertificate = () => {
-    console.log('confirmando asistencia');
+  const handleGetAssistanceCertificate = async () => {
+    setActiveAction('assistance');
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `/users/${userInfo?._id}/justificante`,
+      });
+      if (response.status === 200) {
+        const base64 = response?.data?.data?.justificante;
+        console.log('base64', base64);
+        setActiveAction('');
+      } else {
+        toast.error(' Lo sentimos, algo salio mal :( Intente mas tarde ', {
+          position: 'bottom-right',
+          toastId: 'handleGetAssistanceCertificate',
+        });
+        setActiveAction('');
+      }
+    } catch (error) {
+      console.error(error);
+      setActiveAction('');
+    }
   };
 
   const handleGetCertificate = () => {
@@ -58,13 +90,17 @@ const MySiteMenu = ({ userInfo }) => {
         onClick={handleConfirmAssistance}
         loading={activeAction === 'confirm'}
       />
-      <MenuOption label="Obtener mi comprobante" />
+      <MenuOption
+        label="Obtener mi comprobante"
+        onClick={handleGetAssistanceCertificate}
+        loading={activeAction === 'assistance'}
+      />
       <MenuOption label="Obtener  mi diploma" disabled />
       <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
 
       <h2 className="info-title">Mi informacion</h2>
-      <FormInput name="status" label="Mi status en el torneo" />
-      <FormInput name="coach" label="Mi coach" />
+      <FormInput disbaled value={userInfo?.role} name="status" label="Mi status en el torneo" />
+      <FormInput disbaled value={userInfo?.role} name="coach" label="Mi coach" />
     </div>
   );
 };

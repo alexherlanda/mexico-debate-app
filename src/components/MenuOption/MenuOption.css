@@ -9,7 +9,7 @@
   height: 2.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 20px;
   text-overflow: clip;
   cursor: pointer !important;
@@ -33,7 +33,7 @@
 }
 
 .arrow {
-  background-image: url(./img/arrow.svg);
+  background-image: url(./img/tail-spin.svg);
   width: 20px;
   height: 20px;
   background-repeat: no-repeat;

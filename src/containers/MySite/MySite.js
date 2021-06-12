@@ -47,13 +47,7 @@ function MySite(props) {
     }
   }, [getProfile]);
 
-  const userInfo = {
-    name: 'Alexis',
-    status: 'Inscrito',
-    coach: 'Mark',
-  };
-
-  if (isLogged) {
+  if (isLogged && typeof user?.data?.email !== 'undefined') {
     return (
       <div className="my-site">
         <SectionDetail
@@ -61,7 +55,7 @@ function MySite(props) {
           title={`Hola ${user?.data?.email}`}
           info="Esperamos que tengas un gran torneo"
         />
-        <MySiteMenu userInfo={userInfo} />
+        <MySiteMenu userInfo={user?.data} />
       </div>
     );
   }

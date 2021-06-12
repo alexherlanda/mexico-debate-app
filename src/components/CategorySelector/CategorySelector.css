@@ -1,6 +1,6 @@
 .category_selector {
   border-radius: 15px;
-  height: 3.2rem;
+  height: 2.5rem;
   overflow: hidden;
   width: max-content;
   box-shadow: 0px 0px 10px 1px lightgray;
@@ -21,7 +21,7 @@
 .selected_category {
   border: none;
   border-radius: 0;
-  height: 95%;
+  height: 100%;
   width: 5rem;
   background-color: #b63f88;
   color: white;
@@ -31,6 +31,10 @@
 
 /* Large Screens */
 @media screen and (min-width: 680px) {
+  .category_selector {
+    height: 3.2rem;
+  }
+
   .category {
     font-size: 1.2rem;
     width: 6rem;
