@@ -52,7 +52,7 @@ function MySite(props) {
       <div className="my-site">
         <SectionDetail
           centerInfo
-          title={`Hola ${user?.data?.email}`}
+          title={`Hola ${user?.data?.firstName}`}
           info="Esperamos que tengas un gran torneo"
         />
         <MySiteMenu userInfo={user?.data} />

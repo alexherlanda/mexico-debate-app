@@ -11,6 +11,7 @@ const MySiteMenu = ({ userInfo }) => {
   const history = useHistory();
 
   const [activeAction, setActiveAction] = useState('');
+  const [userStatus, setUserStatus] = useState(userInfo?.status);
 
   const handleConfirmAssistance = async () => {
     setActiveAction('confirm');
@@ -29,6 +30,8 @@ const MySiteMenu = ({ userInfo }) => {
           position: 'bottom-right',
           toastId: 'handleConfirmAssistance',
         });
+
+        setUserStatus(response?.data?.data?.user?.status);
         setActiveAction('');
       } else {
         toast.error(' Lo sentimos, algo salio mal :( Intente mas tarde ', {
@@ -99,8 +102,8 @@ const MySiteMenu = ({ userInfo }) => {
       <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
 
       <h2 className="info-title">Mi informacion</h2>
-      <FormInput disbaled value={userInfo?.role} name="status" label="Mi status en el torneo" />
-      <FormInput disbaled value={userInfo?.role} name="coach" label="Mi coach" />
+      <FormInput disbaled value={userStatus} name="status" label="Mi status en el torneo" />
+      <FormInput disbaled value={userInfo?.coachName} name="coach" label="Mi coach" />
     </div>
   );
 };
