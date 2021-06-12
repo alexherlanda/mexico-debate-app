@@ -38,7 +38,7 @@ function Notice() {
       {!source.isLoading && source.data?.length > 0 && (
         <>
           <h3>Avisos</h3>
-          <ul>{generateList()}</ul>
+          <ul className="notice-list__container ">{generateList()}</ul>
         </>
       )}
     </div>
