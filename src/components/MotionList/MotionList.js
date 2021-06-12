@@ -12,7 +12,7 @@ function MotionList() {
       setSource({ isLoading: true });
       try {
         const results = await request(READ_MOTIONS);
-     
+
         setTimeout(() => {
           setSource({ isLoading: false, data: results.data?.motions });
         }, 600);
@@ -38,7 +38,7 @@ function MotionList() {
         <>
           <h3>Mociones</h3>
           <h4>Subtitulo de la actividad</h4>
-          {generateList()}
+          <div className="motion-container-list">{generateList()}</div>
         </>
       )}
     </div>

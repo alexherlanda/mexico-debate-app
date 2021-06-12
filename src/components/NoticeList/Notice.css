@@ -11,8 +11,9 @@
 }
 .notice-list {
   width: 100%;
-  margin:0 auto;
-  margin-left: 1rem;
+  margin: 0 auto;
+  padding-right: 10px;
+  margin-bottom: 4rem;
 }
 
 .notice-list h3 {
