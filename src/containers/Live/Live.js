@@ -5,14 +5,14 @@ import Section from 'components/Section';
 import './Live.css';
 function Live() {
   return (
-    <>
+    <div className="live-container">
       <Section>
         <MotionList />
       </Section>
       <Section>
         <NoticeList />
       </Section>
-    </>
+    </div>
   );
 }
 export default Live;

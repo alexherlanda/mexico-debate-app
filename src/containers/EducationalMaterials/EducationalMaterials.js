@@ -1,8 +1,11 @@
 import React from 'react';
-import { MediaCard } from '../../components';
+import { MaterialsList } from '../../components';
+import './EducationalMaterials.css';
+
 const EducationalMaterials = () => (
-  <div>
-    <MediaCard />
+  <div className="educational-materials">
+    <MaterialsList title="Cursos" />
+    <MaterialsList title="Videos" />
   </div>
 );
 

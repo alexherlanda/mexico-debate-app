@@ -1,6 +1,10 @@
 
 .motion-list{
-  width: 100%;
+  width: 90%;
+  height: 300px;
+  position: absolute;
+  overflow-y: scroll;
+  padding-right: 10px;
 }
 .motion-item {
   color: #b63f88;

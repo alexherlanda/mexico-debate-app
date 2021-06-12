@@ -8,8 +8,9 @@ import CategorySelector from './CategorySelector';
 import TimeZoneSelector from './TimeZoneSelector';
 import StepsSlider from './StepsSlider';
 import SectionDetail from './SectionDetail';
-import MenuOption from "./MenuOption";
+import MenuOption from './MenuOption';
 import FormInput from './FormInput';
+import MaterialsList from './MaterialsList';
 
 export {
   ActivitiesList,
@@ -23,5 +24,6 @@ export {
   Banner,
   MenuOption,
   SectionDetail,
-  FormInput
+  FormInput,
+  MaterialsList,
 };

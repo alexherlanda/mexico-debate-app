@@ -1,0 +1,32 @@
+.material-item-container {
+  box-shadow: 0px 0px 3px 0px rgb(0 0 0 / 18%);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: min-content;
+  height: 150px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.material-image {
+  background: url('./img/patron.svg');
+  height: 100%;
+  width: 23%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.materialItem-content {
+  width: 77%;
+  padding: 0px 25px;
+  box-sizing: border-box;
+}
+
+.material-description {
+  color: #5D2F6A;
+  font-family: Lato light;
+  font-size: 1rem;
+}
