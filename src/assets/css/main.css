@@ -22,7 +22,7 @@
     left top,
     color-stop(0.44, var(--gray)),
     color-stop(0.72, var(--dark-gray)),
-    color-stop(0.86, rgba(99, 97, 97, 0.671))
+    color-stop(0.86, rgba(99, 97, 97, 0.871))
   );
 }
 
@@ -34,7 +34,7 @@
     left top,
     color-stop(0.44, var(--gray)),
     color-stop(0.72, var(--dark-gray)),
-    color-stop(0.86, rgba(99, 97, 97, 0.671))
+    color-stop(0.86, rgba(99, 97, 97, 0.871))
   );
 }
 
