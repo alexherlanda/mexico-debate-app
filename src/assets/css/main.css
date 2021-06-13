@@ -1,6 +1,8 @@
 :root {
   --main-color: rgb(182, 63, 136);
   --bg-winner-mask: #b64f88;
+  --gray: #f1f1f1;
+  --dark-gray: bg-winner-mask;
 }
 
 ::-webkit-scrollbar-track {
@@ -20,9 +22,9 @@
     linear,
     left bottom,
     left top,
-    color-stop(0.44, var(--gray)),
-    color-stop(0.72, var(--dark-gray)),
-    color-stop(0.86, rgba(99, 97, 97, 0.871))
+    color-stop(0.44, rgba(182, 79, 136, 0.671)),
+    color-stop(0.72, rgba(220, 153, 190, 0.871)),
+    color-stop(0.86, rgba(220, 153, 190, 0.471))
   );
 }
 
@@ -32,9 +34,9 @@
     linear,
     left bottom,
     left top,
-    color-stop(0.44, var(--gray)),
-    color-stop(0.72, var(--dark-gray)),
-    color-stop(0.86, rgba(99, 97, 97, 0.871))
+    color-stop(0.44, rgba(182, 79, 136, 0.471)),
+    color-stop(0.72, rgba(220, 153, 190, 0.871)),
+    color-stop(0.86, rgba(220, 153, 190, 0.471))
   );
 }
 
