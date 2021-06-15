@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import './MySiteMenu.css';
 import { useHistory } from 'react-router';
 import { MenuOption, FormInput } from '../../components';
+import { headerbase64 } from 'utils/constants';
 
 const MySiteMenu = ({ userInfo }) => {
   const history = useHistory();
@@ -55,7 +56,16 @@ const MySiteMenu = ({ userInfo }) => {
       });
       if (response.status === 200) {
         const base64 = response?.data?.data?.justificante;
-        console.log('base64', base64);
+
+        const link = document.createElement('a');
+        const concat = `${headerbase64}${base64}`;
+        link.download = 'Comprobante';
+        link.href = concat;
+        link.click();
+        toast.success('Su comprobante se ha descargado correctamente.', {
+          position: 'bottom-right',
+          toastId: 's',
+        });
         setActiveAction('');
       } else {
         toast.error(' Lo sentimos, algo salio mal :( Intente mas tarde ', {

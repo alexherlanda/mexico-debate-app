@@ -64,3 +64,10 @@
     margin-left: 0rem;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .motion-list {
+    width: 90%;
+    margin: auto;
+  }
+}

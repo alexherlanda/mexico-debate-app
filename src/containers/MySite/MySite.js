@@ -41,18 +41,20 @@ function MySite(props) {
 
   useEffect(() => {
     let userLocal = JSON.parse(localStorage.getItem('user'));
+    console.log('userLocal :>> ', userLocal);
     if (userLocal?.id) {
       setLogged(true);
       getProfile({ userId: userLocal?.id });
     }
   }, [getProfile]);
 
+  console.log('user?.data :>> ', user);
   if (isLogged && typeof user?.data?.email !== 'undefined') {
     return (
       <div className="my-site">
         <SectionDetail
           centerInfo
-          title={`Hola ${user?.data?.firstName}`}
+          title={`Hola ${user?.data?.fullname}`}
           info="Esperamos que tengas un gran torneo"
         />
         <MySiteMenu userInfo={user?.data} />

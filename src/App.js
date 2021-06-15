@@ -14,6 +14,7 @@ import { Provider } from 'react-redux';
 import debateStore from './redux/store';
 
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
+import 'assets/css/main.css';
 
 function App() {
   return (
