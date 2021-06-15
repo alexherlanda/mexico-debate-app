@@ -10,12 +10,17 @@ const MaterialsList = (props) => {
       <h2>{title}</h2>
       <div>
         {list.map((item, i) => (
-          <MaterialItem key={`${title}-${i}`} title={item.title} description={item.description} />
+          <MaterialItem
+            key={`${title}-${i}`}
+            title={item.title}
+            description={item.description}
+            url={item.url}
+          />
         ))}
       </div>
     </>
   );
-}
+};
 
 MaterialsList.propTypes = {
   title: PropTypes.string,

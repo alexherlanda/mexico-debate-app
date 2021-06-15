@@ -8,6 +8,8 @@
   height: 150px;
   overflow: hidden;
   margin-bottom: 20px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .material-image {
@@ -26,7 +28,7 @@
 }
 
 .material-description {
-  color: #5D2F6A;
+  color: #5d2f6a;
   font-family: Lato light;
   font-size: 1rem;
 }
