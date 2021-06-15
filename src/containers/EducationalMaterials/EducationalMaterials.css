@@ -1,17 +1,19 @@
 .educational-materials {
-  width: 70%;
+  padding-left: 10px;
+  padding-right: 10px;
   margin: auto;
   color: #b64f88;
 }
 
-@media screen and (max-width: 768px) {
-  .educational-materials {
-    width: 90%;
-  }
+.educational-materials__category {
+  display: flex;
+  justify-content: flex-end;
 }
 
+/* Large Screens */
 @media screen and (min-width: 680px) {
   .educational-materials {
-    width: 60%;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
