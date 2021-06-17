@@ -55,7 +55,7 @@ function MySite(props) {
         <SectionDetail
           centerInfo
           title={`Hola ${user?.data?.fullname}`}
-          info="Esperamos que tengas un gran torneo"
+          info="Recuerda que es indispensable Confirmar tu asistencia en esta sección para poder participar en México Debate 2021. Esperamos que tengas un gran torneo."
         />
         <MySiteMenu userInfo={user?.data} />
       </div>
@@ -65,8 +65,7 @@ function MySite(props) {
     <div className="my-site">
       <SectionDetail
         title="Mi torneo"
-        info="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo enim, iaculis sit amet
-        egestas vitae, viverra pretium nulla. Nulla varius rutrum nibh ac pharetra."
+        info="¡Bienvenidx a México Debate 2021! Este es tu sitio personal del torneo, donde puedes confirmar tu asistencia, imprimir tu comprobante, etc. Para acceder, busca los datos de inicio de sesión que llegaron al correo con el que te registraste en el torneo."
       />
 
       <LoginFrom onLogIn={logIn} loading={isLoading} />
