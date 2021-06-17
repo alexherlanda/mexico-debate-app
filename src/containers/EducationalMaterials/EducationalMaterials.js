@@ -31,6 +31,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Guía de oradores',
+                  url: "https://debatemexico.org/mexico-debate/guia_oradores_menor.pdf",
                   description:
                     'Una guía completa con las mejores técnicas e ideas para ganar debates. Elaborada por campeones.',
                 },
@@ -82,6 +83,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Guía de oradores',
+                  url: "https://debatemexico.org/mexico-debate/guia_jueces.pdf",
                   description:
                     'Una guía completa con las mejores técnicas e ideas para ganar debates. Elaborada por campeones.',
                 },
@@ -129,7 +131,7 @@ const EducationalMaterials = () => {
                   title: 'Guía de Jueces ',
                   description:
                     'Una guía completa para quienes quieren profesionalizarse como jueces.',
-                  url: 'https://www.youtube.com/watch?v=zcMXJZasu8Q&list=PLFk0qboRAjYn_ykcZCvztAZsbvHqIU5Yx&index=8',
+                  url: 'https://debatemexico.org/mexico-debate/guia_jueces.pdf',
                 },
                 {
                   title: 'Taller para jueces ',
