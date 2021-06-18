@@ -1,49 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import axios from '../../services/axios';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
 import './MySiteMenu.css';
-import { useHistory } from 'react-router';
 import { MenuOption, FormInput } from '../../components';
 import { headerbase64 } from 'utils/constants';
 
 const MySiteMenu = ({ userInfo }) => {
-  const history = useHistory();
-
   const [activeAction, setActiveAction] = useState('');
   const [userStatus, setUserStatus] = useState(userInfo?.status);
 
   const handleConfirmAssistance = async () => {
-    setActiveAction('confirm');
-    try {
-      const response = await axios({
-        method: 'PATCH',
-        url: `/users/${userInfo?.id}`,
-        data: {
-          user: {
-            status: statusEnum[5].value,
+    if (userInfo.status === statusEnum[6].value) {
+      try {
+        setActiveAction('confirm');
+        const response = await axios({
+          method: 'PATCH',
+          url: `/users/${userInfo?.id}`,
+          data: {
+            user: {
+              status: statusEnum[7].value,
+            },
           },
-        },
-      });
-      if (response.status === 200) {
-        toast.success(' Tu asistencia al torneo ha sido confirmada 🚀 ', {
-          position: 'bottom-right',
-          toastId: 'handleConfirmAssistance',
         });
+        if (response.status === 200) {
+          toast.success(' Tu asistencia al torneo ha sido confirmada 🚀 ', {
+            position: 'bottom-right',
+            toastId: 'handleConfirmAssistance',
+          });
 
-        setUserStatus(response?.data?.data?.user?.status);
-        setActiveAction('');
-      } else {
-        toast.error(' Lo sentimos, algo salio mal :( Intente mas tarde ', {
-          position: 'bottom-right',
-          toastId: 'handleConfirmAssistance',
-        });
+          setUserStatus(response?.data?.data?.user?.status);
+          setActiveAction('');
+        } else {
+          toast.error(' Lo sentimos, algo salio mal :( Intente mas tarde ', {
+            position: 'bottom-right',
+            toastId: 'handleConfirmAssistance',
+          });
+          setActiveAction('');
+        }
+      } catch (error) {
+        console.error(error);
         setActiveAction('');
       }
-    } catch (error) {
-      console.error(error);
-      setActiveAction('');
+    } else {
+      toast.info(
+        'Demasiado pronto! Podras confirmar tu asistencia cuando tu status sea',
+        statusEnum[6].label,
+        {
+          position: 'bottom-right',
+          toastId: 'handleConfirmAssistance',
+        }
+      );
     }
   };
 
@@ -89,37 +97,48 @@ const MySiteMenu = ({ userInfo }) => {
   };
 
   const statusEnum = {
-    0: { label: 'Sin definir', value: 0 },
+    0: { label: 'Expulsado', value: 0 },
     1: {
       label: 'En lista de espera',
       value: 1,
     },
     2: {
-      label: 'Equipo buscando integrantes',
+      label: 'Equipo incompleto',
       value: 2,
     },
     3: {
-      label: 'Equipo abierto',
+      label: 'Falta cumplir con paridad de género',
       value: 3,
     },
     4: {
-      label: 'Equipo pre-inscrito',
+      label: 'Faltan documentos',
       value: 4,
     },
     5: {
-      label: 'Equipo registrado',
+      label: 'Equipo Asignado. Falta confirmación',
       value: 5,
+    },
+    6: {
+      label: 'Equipo-pre inscrito',
+      value: 6,
+    },
+    7: {
+      label: 'Equipo registrado',
+      value: 7,
     },
   };
 
   return (
     <div className="my-site-menu">
       <h2 className="info-title">Mis acciones</h2>
-      <MenuOption
-        label="Confirmar mi asistencia"
-        onClick={handleConfirmAssistance}
-        loading={activeAction === 'confirm'}
-      />
+      {userInfo?.status !== statusEnum[7].value ? (
+        <MenuOption
+          label="Confirmar mi asistencia"
+          onClick={handleConfirmAssistance}
+          loading={activeAction === 'confirm'}
+        />
+      ) : null}
+
       <MenuOption
         label="Obtener mi comprobante"
         onClick={handleGetAssistanceCertificate}

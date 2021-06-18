@@ -20,8 +20,8 @@ function App() {
   return (
     <>
       <Provider store={debateStore}>
-        <Banner />
         <Router>
+          <Banner />
           <Tabs />
           <Switch>
             <Route exact path="/" component={GeneralInfo} />
