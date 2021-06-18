@@ -136,7 +136,7 @@ const MySiteMenu = ({ userInfo }) => {
         name="status"
         label="Mi status en el torneo"
       />
-      <FormInput disbaled value={userInfo?.coachName} name="coach" label="Mi coach" />
+      <FormInput disbaled value={userInfo?.coachName ?? "Tu coach aún no es asignado"} name="coach" label="Mi coach" />
     </div>
   );
 };
