@@ -13,6 +13,7 @@ import {
   broadcastsFail,
 } from 'redux/actions';
 import { login, profile } from 'services/auth';
+import { broadcastsList } from 'services/broadcasts';
 
 export function* workLoginRequest(action) {
   const CancelToken = instance.CancelToken;
@@ -88,31 +89,19 @@ export function* workProfileRequest(action) {
   }
 }
 
-export function* workBroadcastsRequest(action) {
+export function* workBroadcastsRequest() {
   const CancelToken = instance.CancelToken;
   const source = CancelToken.source();
-  const { payload } = action;
-  const { userId, onSuccess, onFail } = payload;
+
   try {
-    const response = yield call(profile, { userId, cancelToken: source.token });
+    const response = yield call(broadcastsList, { cancelToken: source.token });
 
     if (response?.data?.data) {
-      if (onSuccess) {
-        yield onSuccess(response.data.data.user.email);
-      }
       yield put(broadcastsSuccess(response.data.data.user));
     } else {
-      if (onFail) {
-        yield onFail();
-      }
       yield put(broadcastsFail());
     }
-
-    // yield put(userSetData(user));
   } catch (_error) {
-    if (onFail) {
-      yield onFail();
-    }
     yield put(broadcastsFail());
   } finally {
     if (yield cancelled()) {
