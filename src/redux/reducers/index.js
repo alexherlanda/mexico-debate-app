@@ -5,6 +5,9 @@ import {
   PROFILE_REQUEST,
   PROFILE_SUCCESS,
   PROFILE_FAIL,
+  BROADCASTS_REQUEST,
+  BROADCASTS_SUCCESS,
+  BROADCASTS_FAIL,
 } from '../actions/';
 
 const defaultState = {};
@@ -40,6 +43,30 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         user: {
+          isLoading: false,
+          data: null,
+        },
+      };
+    case BROADCASTS_REQUEST:
+      return {
+        ...state,
+        broadcasts: {
+          isLoading: true,
+          data: null,
+        },
+      };
+    case BROADCASTS_SUCCESS:
+      return {
+        ...state,
+        broadcasts: {
+          isLoading: false,
+          data: action.payload,
+        },
+      };
+    case BROADCASTS_FAIL:
+      return {
+        ...state,
+        broadcasts: {
           isLoading: false,
           data: null,
         },

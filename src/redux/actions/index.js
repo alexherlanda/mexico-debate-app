@@ -8,6 +8,10 @@ export const PROFILE_REQUEST = 'PROFILE_REQUEST';
 export const PROFILE_SUCCESS = 'PROFILE_SUCCESS';
 export const PROFILE_FAIL = 'PROFILE_FAIL';
 
+export const BROADCASTS_REQUEST = 'BROADCASTS_REQUEST';
+export const BROADCASTS_SUCCESS = 'BROADCASTS_SUCCESS';
+export const BROADCASTS_FAIL = 'BROADCASTS_FAIL';
+
 export function loginRequest(payload) {
   return {
     type: LOGIN_REQUEST,
@@ -46,6 +50,27 @@ export function profileSuccess(payload) {
 export function profileFail(payload) {
   return {
     type: PROFILE_FAIL,
+    payload,
+  };
+}
+
+export function broadcastsRequest(payload) {
+  return {
+    type: BROADCASTS_REQUEST,
+    payload,
+  };
+}
+
+export function broadcastsSuccess(payload) {
+  return {
+    type: BROADCASTS_SUCCESS,
+    payload,
+  };
+}
+
+export function broadcastsFail(payload) {
+  return {
+    type: BROADCASTS_FAIL,
     payload,
   };
 }

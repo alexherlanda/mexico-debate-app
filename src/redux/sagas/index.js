@@ -8,6 +8,9 @@ import {
   profileRequest,
   profileSuccess,
   profileFail,
+  BROADCASTS_REQUEST,
+  broadcastsSuccess,
+  broadcastsFail,
 } from 'redux/actions';
 import { login, profile } from 'services/auth';
 
@@ -85,8 +88,45 @@ export function* workProfileRequest(action) {
   }
 }
 
+export function* workBroadcastsRequest(action) {
+  const CancelToken = instance.CancelToken;
+  const source = CancelToken.source();
+  const { payload } = action;
+  const { userId, onSuccess, onFail } = payload;
+  try {
+    const response = yield call(profile, { userId, cancelToken: source.token });
+
+    if (response?.data?.data) {
+      if (onSuccess) {
+        yield onSuccess(response.data.data.user.email);
+      }
+      yield put(broadcastsSuccess(response.data.data.user));
+    } else {
+      if (onFail) {
+        yield onFail();
+      }
+      yield put(broadcastsFail());
+    }
+
+    // yield put(userSetData(user));
+  } catch (_error) {
+    if (onFail) {
+      yield onFail();
+    }
+    yield put(broadcastsFail());
+  } finally {
+    if (yield cancelled()) {
+      source.cancel('cancelled RQUEST');
+    }
+  }
+}
+
 export function* watchLoginRequest() {
   yield takeLatest(LOGIN_REQUEST, workLoginRequest);
+}
+
+export function* watchBroadcastsRequest() {
+  yield takeLatest(BROADCASTS_REQUEST, workBroadcastsRequest);
 }
 export function* watchProfileRequest() {
   yield takeLatest(PROFILE_REQUEST, workProfileRequest);
