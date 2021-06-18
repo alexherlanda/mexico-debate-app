@@ -143,6 +143,7 @@ const MySiteMenu = ({ userInfo }) => {
         label="Obtener mi comprobante"
         onClick={handleGetAssistanceCertificate}
         loading={activeAction === 'assistance'}
+        disabled
       />
       <MenuOption label="Obtener  mi diploma" disabled />
       <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
@@ -154,7 +155,7 @@ const MySiteMenu = ({ userInfo }) => {
         name="status"
         label="Mi status en el torneo"
       />
-      <FormInput disbaled value={userInfo?.coachName} name="coach" label="Mi coach" />
+      <FormInput disbaled value={userInfo?.coachName ?? "Tu coach aún no es asignado"} name="coach" label="Mi coach" />
     </div>
   );
 };
