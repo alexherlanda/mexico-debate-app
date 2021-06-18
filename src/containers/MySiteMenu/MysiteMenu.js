@@ -45,8 +45,7 @@ const MySiteMenu = ({ userInfo }) => {
       }
     } else {
       toast.info(
-        'Demasiado pronto! Podras confirmar tu asistencia cuando tu status sea',
-        statusEnum[6].label,
+        `Demasiado pronto! Podras confirmar tu asistencia cuando tu status sea ${statusEnum[6].label} `,
         {
           position: 'bottom-right',
           toastId: 'handleConfirmAssistance',
@@ -155,7 +154,12 @@ const MySiteMenu = ({ userInfo }) => {
         name="status"
         label="Mi status en el torneo"
       />
-      <FormInput disbaled value={userInfo?.coachName ?? "Tu coach aún no es asignado"} name="coach" label="Mi coach" />
+      <FormInput
+        disbaled
+        value={userInfo?.coachName ?? 'Tu coach aún no es asignado'}
+        name="coach"
+        label="Mi coach"
+      />
     </div>
   );
 };
