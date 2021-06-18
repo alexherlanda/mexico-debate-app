@@ -29,7 +29,7 @@ const requestHandler = (request) => {
 
 const responseHandler = (response) => {
   if (response.status === 401) {
-    toast.error('El token ha expirado', { position: 'bottom-right', toastId: '401' });
+    //toast.error('El token ha expirado', { position: 'bottom-right', toastId: '401' });
     cleanLocalStorage();
     //window.location = '/login';
   }
