@@ -24,8 +24,8 @@ function App() {
           <Banner />
           <Tabs />
           <Switch>
-            <Route exact path="/" component={GeneralInfo} />
-            <Route exact path="/test" component={TestComponents} />
+            <Route exact path="/" component={Schedule} />
+            <Route exact path="/test" component={GeneralInfo} />
             <Route exact path="/schedule" component={Schedule} />
             <Route exact path="/education" component={EducationalMaterials} />
             <Route exact path="/live" component={Live} />
