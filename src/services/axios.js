@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import { cleanLocalStorage } from 'utils';
 
 const customAxios = axios.create({

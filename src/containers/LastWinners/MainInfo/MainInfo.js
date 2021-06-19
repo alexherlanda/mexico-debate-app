@@ -4,11 +4,8 @@ import './MainInfo.css';
 function MainInfo() {
   return (
     <div className="main-info-winners">
-      <h2>Ganadores</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis leo enim, iaculis sit amet
-        egestas vitae, viverra pretium nulla. Nulla varius rutrum nibh ac pharetra.
-      </p>
+      <h2>Ganadores pasados</h2>
+      <p>Conoce a las personas que ganaron las ediciones pasadas de México Debate</p>
     </div>
   );
 }

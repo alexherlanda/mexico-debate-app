@@ -2,82 +2,91 @@ import React from 'react';
 import './WinnersGrid.css';
 import Slider from 'components/Slider';
 import WinnerCard from 'components/WinnerCard';
-function WinnersGrid() {
+import danielDiaz from '../data/Daniel_Díaz-07.jpeg';
+import danielMimilla from '../data/Daniel_Mimila-07.jpeg';
+import gemma from '../data/Gemma_Guerrero-07.jpeg';
+import monica from '../data/Monica_Garcia-07.jpeg';
+import regina from '../data/Regina_Delgado-07.jpeg';
+import ruben from '../data/Rubén_Sánchez-07.jpeg';
+import sofia from '../data/Sofía_Morales-07.jpeg';
+import valentina from '../data/Valentina_Cassasus-07.jpeg';
+import marcelo from '../data/Marcelo_Gamboa-07.jpeg';
+
+function WinnersGrid({ souldCombineDataSets }) {
+  const majorWinners = [
+    {
+      id: 1,
+      name: 'Gemma Guerrero',
+      category: 'Categoría Mayor 2020',
+      bg: gemma,
+      created: '2017-11-04T18:50:21.651Z',
+    },
+    {
+      id: 2,
+      name: 'Daniel Mimila',
+      category: 'Categoría Mayor 2020',
+      bg: danielMimilla,
+      created: '2017-11-04T19:09:56.428Z',
+    },
+    {
+      id: 3,
+      name: 'Rubén Sánchez',
+      category: 'Categoría Mayor 2019',
+      bg: ruben,
+    },
+    {
+      id: 4,
+      name: 'Mónica García',
+      category: 'Categoría Mayor 2019',
+      bg: monica,
+      created: '2017-11-04T19:26:56.301Z',
+    },
+  ];
+
+  const minorWinners = [
+    {
+      id: 11,
+      name: 'Valentina Casasus',
+      category: 'Categoría Menor 2020',
+      bg: valentina,
+      created: '2017-11-04T18:50:21.651Z',
+    },
+    {
+      id: 12,
+      name: 'Sofía Morales',
+      category: 'Categoría Menor 2020',
+      bg: sofia,
+      created: '2017-11-04T19:09:56.428Z',
+    },
+    {
+      id: 13,
+      name: 'Regina Delgado',
+      category: 'Categoría Menor 2020',
+      bg: regina,
+    },
+    {
+      id: 14,
+      name: 'Marcelo Gamboa',
+      category: 'Categoría Menor 2020',
+      bg: marcelo,
+      created: marcelo,
+    },
+    {
+      id: 15,
+      name: 'Daniel Mendez ',
+      category: 'Categoría Menor 2020',
+      bg: danielDiaz,
+      created: valentina,
+    },
+  ];
   return (
     <div className="winners-grid">
       <Slider
-        items={[
-          {
-            id: 2,
-            name: 'Rick Sanchez',
-            from: 'Earth (C-137)',
-            bg: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-            created: '2017-11-04T18:50:21.651Z',
-          },
-          {
-            id: 3,
-            name: 'Summer Smith',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-            created: '2017-11-04T19:09:56.428Z',
-          },
-          {
-            id: 4,
-            name: 'Beth Smith',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
-          },
-          {
-            id: 5,
-            name: 'Jerry Smith',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
-            created: '2017-11-04T19:26:56.301Z',
-          },
-          {
-            id: 6,
-            name: 'Abadango Cluster Princess',
-            from: 'Abadango',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
-            created: '2017-11-04T19:50:28.250Z',
-          },
-          {
-            id: 7,
-            name: 'Abradolf Lincler',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
-            created: '2017-11-04T19:59:20.523Z',
-          },
-          {
-            id: 8,
-            name: 'Adjudicator Rick',
-            from: 'unknown',
-            bg: 'https://rickandmortyapi.com/api/character/avatar/8.jpeg',
-            created: '2017-11-04T20:03:34.737Z',
-          },
-          {
-            id: 9,
-            name: 'Agency Director',
-            from: 'Earth (Replacement Dimension)',
-            bg: 'https://rickandmortyapi.com/api/character/avatar/9.jpeg',
-            created: '2017-11-04T20:06:54.976Z',
-          },
-          {
-            id: 10,
-            name: 'Alan Rails',
-            from: "Worldender's lair",
-            bg: 'https://rickandmortyapi.com/api/character/avatar/10.jpeg',
-            created: '2017-11-04T20:19:09.017Z',
-          },
-        ]}
+        items={majorWinners}
         config={{
           autoPlay: true,
           containerClass: 'slider-winner-container',
+          itemClass: 'winners-item',
           infinite: true,
           responsive: {
             desktop: {
@@ -92,78 +101,11 @@ function WinnersGrid() {
       </Slider>
       <div style={{ marginTop: '1rem' }} />
       <Slider
-        items={[
-          {
-            id: 2,
-            name: 'Rick Sanchez',
-            from: 'Earth (C-137)',
-            bg: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-            created: '2017-11-04T18:50:21.651Z',
-          },
-          {
-            id: 3,
-            name: 'Summer Smith',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-            created: '2017-11-04T19:09:56.428Z',
-          },
-          {
-            id: 4,
-            name: 'Beth Smith',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
-          },
-          {
-            id: 5,
-            name: 'Jerry Smith',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
-            created: '2017-11-04T19:26:56.301Z',
-          },
-          {
-            id: 6,
-            name: 'Abadango Cluster Princess',
-            from: 'Abadango',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
-            created: '2017-11-04T19:50:28.250Z',
-          },
-          {
-            id: 7,
-            name: 'Abradolf Lincler',
-            from: 'Earth (Replacement Dimension)',
-
-            bg: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
-            created: '2017-11-04T19:59:20.523Z',
-          },
-          {
-            id: 8,
-            name: 'Adjudicator Rick',
-            from: 'unknown',
-            bg: 'https://rickandmortyapi.com/api/character/avatar/8.jpeg',
-            created: '2017-11-04T20:03:34.737Z',
-          },
-          {
-            id: 9,
-            name: 'Agency Director',
-            from: 'Earth (Replacement Dimension)',
-            bg: 'https://rickandmortyapi.com/api/character/avatar/9.jpeg',
-            created: '2017-11-04T20:06:54.976Z',
-          },
-          {
-            id: 10,
-            name: 'Alan Rails',
-            from: "Worldender's lair",
-            bg: 'https://rickandmortyapi.com/api/character/avatar/10.jpeg',
-            created: '2017-11-04T20:19:09.017Z',
-          },
-        ]}
+        items={souldCombineDataSets ? [...minorWinners, ...majorWinners] : minorWinners}
         config={{
           autoPlay: true,
           containerClass: 'slider-winner-container',
+          itemClass: 'winners-item',
           infinite: true,
           responsive: {
             desktop: {
