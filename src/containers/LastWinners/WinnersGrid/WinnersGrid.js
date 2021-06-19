@@ -94,6 +94,10 @@ function WinnersGrid({ souldCombineDataSets }) {
               items: 4,
               slidesToSlide: 1, // optional, default to 1.
             },
+            mobile: {
+              breakpoint: { max: 464, min: 0 },
+              items: 1,
+            },
           },
         }}
       >
