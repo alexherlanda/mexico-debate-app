@@ -1,11 +1,11 @@
 import React from 'react';
 import MainInfo from './MainInfo';
 import WinnersGrid from './WinnersGrid';
-function LastWinners({ souldCombineDataSets }) {
+function LastWinners() {
   return (
     <div style={{ display: 'block', width: '100%' }}>
       <MainInfo />
-      <WinnersGrid souldCombineDataSets={souldCombineDataSets} />
+      <WinnersGrid  />
     </div>
   );
 }
