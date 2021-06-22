@@ -12,7 +12,7 @@ import sofia from '../data/Sofía_Morales-07.jpeg';
 import valentina from '../data/Valentina_Cassasus-07.jpeg';
 import marcelo from '../data/Marcelo_Gamboa-07.jpeg';
 
-function WinnersGrid({ souldCombineDataSets }) {
+function WinnersGrid() {
   const majorWinners = [
     {
       id: 1,
@@ -94,6 +94,10 @@ function WinnersGrid({ souldCombineDataSets }) {
               items: 4,
               slidesToSlide: 1, // optional, default to 1.
             },
+            mobile: {
+              breakpoint: { max: 464, min: 0 },
+              items: 1,
+            },
           },
         }}
       >
@@ -101,7 +105,7 @@ function WinnersGrid({ souldCombineDataSets }) {
       </Slider>
       <div style={{ marginTop: '1rem' }} />
       <Slider
-        items={souldCombineDataSets ? [...minorWinners, ...majorWinners] : minorWinners}
+        items={minorWinners}
         config={{
           autoPlay: true,
           containerClass: 'slider-winner-container',

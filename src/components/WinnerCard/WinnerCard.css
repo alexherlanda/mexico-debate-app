@@ -57,3 +57,15 @@
 .winner-description-content h3 {
   font-size: 0.8rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .winner-card {
+    height: 0;
+  }
+  .winner-card::after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100% !important;
+  }
+}
