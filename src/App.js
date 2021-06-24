@@ -1,14 +1,7 @@
 import React from 'react';
 import './App.css';
-import {
-  GeneralInfo,
-  Live,
-  TestComponents,
-  EducationalMaterials,
-  Schedule,
-  MySite,
-} from './containers';
-import { Tabs, Banner } from './components';
+import { GeneralInfo, Live, EducationalMaterials, Schedule, MySite } from './containers';
+import { Tabs, Banner, Footer } from './components';
 import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
 import debateStore from './redux/store';
@@ -33,6 +26,7 @@ function App() {
             <Route exact path="*" component={GeneralInfo} />
           </Switch>
           <ToastContainer />
+          <Footer />
         </Router>
       </Provider>
     </>

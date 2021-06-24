@@ -11,7 +11,7 @@ const GeneralInfo = () => {
           width="100px"
           src={icono}
           alt="Sumate al dialogo"
-          style={{ margin: '0 auto', textAlign: 'center' }}
+          style={{ margin: '0 auto', textAlign: 'center', marginTop: '-2rem' }}
         />
       </Section>
 

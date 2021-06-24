@@ -11,6 +11,7 @@ import SectionDetail from './SectionDetail';
 import MenuOption from './MenuOption';
 import FormInput from './FormInput';
 import MaterialsList from './MaterialsList';
+import Footer from './Footer';
 
 export {
   ActivitiesList,
@@ -26,4 +27,5 @@ export {
   SectionDetail,
   FormInput,
   MaterialsList,
+  Footer,
 };
