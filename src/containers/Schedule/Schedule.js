@@ -41,12 +41,28 @@ const Schedule = () => {
           selectedCategory={selectedCategory}
           onCategoryClick={handleOnClickCategory}
         />
+
         {/* <TimeZoneSelector
           selectedTimeZone={selectedTimeZone}
           onZoneClick={handleOnZoneClick}
         /> */}
       </div>
-      <ActivitiesList dataSource={activitiesList} />{' '}
+      <ActivitiesList dataSource={activitiesList} />
+      <div className="schedule__bottomBar">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={
+            selectedCategory === 'minor'
+              ? 'https://www.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebateHorarios-categoria-menor_Final.pdf'
+              : 'https://portal.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebate-horarios-cat-mayor-final.pdf'
+          }
+          className="bottomBar__download"
+        >
+          {' '}
+          Descargar Horario{' '}
+        </a>
+      </div>
     </div>
   );
 };

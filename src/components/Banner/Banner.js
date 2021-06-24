@@ -27,7 +27,7 @@ const Banner = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebate-convocatoria_final.pdf"
+              href="https://www.ine.mx/mexico-debate-2021/"
             >
               {' '}
               CONVOCATORIA{' '}

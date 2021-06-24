@@ -8,6 +8,23 @@
   justify-content: flex-end;
 }
 
+.schedule__bottomBar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 15px;
+}
+
+.bottomBar__download {
+  border: none;
+  border-radius: 0;
+  height: 95%;
+  width: 9rem;
+  background-color: white;
+  color: #b63f88;
+  font-size: 1rem;
+  font-family: Biko Bold;
+}
+
 /* Large Screens */
 @media screen and (min-width: 680px) {
   .schedule {
