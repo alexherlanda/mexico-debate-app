@@ -145,7 +145,17 @@ const MySiteMenu = ({ userInfo }) => {
         disabled
       />
       <MenuOption label="Obtener  mi diploma" disabled />
-      <MenuOption label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
+      <MenuOption disabled label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
+      <MenuOption
+        disabled
+        label="Contactar a mi coach"
+        disbaled={true}
+        href={
+          userInfo?.coachNumber
+            ? `https://wa.me/5213111655499?text=Hola%coach%listo%para%20entrenar`
+            : undefined
+        }
+      />
 
       <h2 className="info-title">Mi informacion</h2>
       <FormInput
@@ -154,12 +164,15 @@ const MySiteMenu = ({ userInfo }) => {
         name="status"
         label="Mi status en el torneo"
       />
+      <h2 className="info-title">Mi coach</h2>
       <FormInput
         disbaled
         value={userInfo?.coachName ?? 'Tu coach aún no es asignado'}
         name="coach"
-        label="Mi coach"
+        label="Nombre"
       />
+      <FormInput disbaled value={userInfo?.coachNumber ?? '--'} name="coach" label="Correo" />
+      <FormInput disbaled value={userInfo?.coachEmail ?? '--'} name="coach" label="Telefono" />
     </div>
   );
 };

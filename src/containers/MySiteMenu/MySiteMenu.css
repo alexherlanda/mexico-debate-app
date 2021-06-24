@@ -1,8 +1,8 @@
 .my-site-menu {
   border-radius: 20px;
   border: 1px solid lightgray;
-  width: 40%;
-  height: 580px;
+  width: 43%;
+  height: fit-content;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
@@ -12,17 +12,13 @@
   background-position: -10px 102%;
   background-size: 105%;
 }
-  
+
 .info-title {
   color: #b64f88;
 }
-  
-
 
 @media only screen and (max-width: 768px) {
   .my-site-menu {
     width: 100%;
   }
-
 }
-  

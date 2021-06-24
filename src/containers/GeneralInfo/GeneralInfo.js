@@ -3,9 +3,11 @@ import { Section, StepsSlider } from '../../components';
 import LastWinners from 'containers/LastWinners';
 
 const GeneralInfo = () => {
-
   return (
     <div>
+      <Section title="Sumate al dialogo">
+        <p> Lorem ipsum </p>
+      </Section>
       <Section title="Debatir en serio" description=" ">
         <LastWinners />
       </Section>
