@@ -11,10 +11,10 @@ const FormInput = (props) => {
 
   return (
     <label className="input-label" htmlFor={name}>
-      {label}
+      {label + ':'}
       <input
         disabled={disabled}
-        placeholder={placeHolder || name}
+        placeholder={placeHolder}
         value={value}
         onChange={handleOnChange}
         type={isPassword ? 'password' : ''}

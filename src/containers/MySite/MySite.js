@@ -41,21 +41,19 @@ function MySite(props) {
 
   useEffect(() => {
     let userLocal = JSON.parse(localStorage.getItem('user'));
-    console.log('userLocal :>> ', userLocal);
     if (userLocal?.id) {
       setLogged(true);
       getProfile({ userId: userLocal?.id });
     }
   }, [getProfile]);
 
-  console.log('user?.data :>> ', user);
   if (isLogged && typeof user?.data?.email !== 'undefined') {
     return (
       <div className="my-site">
         <SectionDetail
           centerInfo
-          title={`Hola ${user?.data?.fullname}`}
-          info="Recuerda que es indispensable Confirmar tu asistencia en esta sección para poder participar en México Debate 2021. Esperamos que tengas un gran torneo."
+          title={`Hola ${user?.data?.fullname},`}
+          info="Recuerda que es indispensable confirmar tu asistencia en esta sección para poder participar en México Debate 2021. Esperamos que tengas un gran torneo."
         />
         <MySiteMenu userInfo={user?.data} />
       </div>

@@ -15,7 +15,7 @@ const EducationalMaterials = () => {
         return (
           <>
             <MaterialsList
-              title="Impresos"
+              title="Documentos"
               list={[
                 {
                   title: 'Reglamento del Torneo Categoría Menor',
@@ -31,7 +31,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Guía de oradores',
-                  url: "https://debatemexico.org/mexico-debate/guia_oradores_menor.pdf",
+                  url: 'https://debatemexico.org/mexico-debate/guia_oradores_menor.pdf',
                   description:
                     'Una guía completa con las mejores técnicas e ideas para ganar debates. Elaborada por campeones.',
                 },
@@ -67,7 +67,7 @@ const EducationalMaterials = () => {
         return (
           <>
             <MaterialsList
-              title="Materiales"
+              title="Documentos"
               list={[
                 {
                   title: 'Reglamento del Torneo Categoría Mayor',
@@ -83,7 +83,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Guía de oradores',
-                  url: "https://debatemexico.org/mexico-debate/guia_jueces.pdf",
+                  url: 'https://debatemexico.org/mexico-debate/guia_jueces.pdf',
                   description:
                     'Una guía completa con las mejores técnicas e ideas para ganar debates. Elaborada por campeones.',
                 },
