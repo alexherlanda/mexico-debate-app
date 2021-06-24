@@ -15,6 +15,7 @@ const MaterialsList = (props) => {
             title={item.title}
             description={item.description}
             url={item.url}
+            {...item}
           />
         ))}
       </div>
