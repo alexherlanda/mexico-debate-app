@@ -13,6 +13,10 @@
   margin-top: 0rem;
 }
 
+.my-site p {
+  text-align: justify;
+}
+
 /* Large Screens */
 @media screen and (min-width: 680px) {
   .my-site {

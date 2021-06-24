@@ -29,3 +29,14 @@
 .section__description {
   color: rgb(96, 96, 96);
 }
+
+.dialog h2 {
+  text-align: center !important;
+  width: 100%;
+}
+
+.dialog p {
+  margin: 0.5rem auto;
+  font-size: 1.2rem;
+  width: 80%;
+}
