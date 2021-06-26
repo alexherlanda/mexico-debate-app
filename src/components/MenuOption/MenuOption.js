@@ -3,7 +3,12 @@ import './MenuOption.css';
 
 const MenuOption = ({ loading, disabled, label, onClick, href }) => {
   return href ? (
-    <a href={disabled ? undefined : href} className="menu-option-a">
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      href={disabled ? undefined : href}
+      className="menu-option-a"
+    >
       {label}
       <div className={loading ? 'loader' : 'arrow'} />
     </a>

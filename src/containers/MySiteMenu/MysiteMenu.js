@@ -147,12 +147,11 @@ const MySiteMenu = ({ userInfo }) => {
       <MenuOption label="Obtener  mi diploma" disabled />
       <MenuOption disabled label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
       <MenuOption
-        disabled
         label="Contactar a mi coach"
-        disbaled={true}
+        disbaled={!userInfo?.coachNumber}
         href={
           userInfo?.coachNumber
-            ? `https://wa.me/5213111655499?text=Hola%coach%listo%para%20entrenar`
+            ? `https://wa.me/${userInfo?.coachNumber.replace(/\s/g, '')}`
             : undefined
         }
       />
@@ -171,8 +170,13 @@ const MySiteMenu = ({ userInfo }) => {
         name="coach"
         label="Nombre"
       />
-      <FormInput disbaled value={userInfo?.coachNumber ?? '--'} name="coach" label="Correo" />
-      <FormInput disbaled value={userInfo?.coachEmail ?? '--'} name="coach" label="Telefono" />
+      <FormInput disbaled value={userInfo?.coachNumber ?? '--'} name="coach" label="Telefono" />
+      <FormInput
+        disbaled
+        value={userInfo?.coachEmail ? userInfo?.coachEmail : '--'}
+        name="coach"
+        label="Correo"
+      />
     </div>
   );
 };
