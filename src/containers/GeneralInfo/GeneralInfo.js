@@ -15,11 +15,10 @@ const GeneralInfo = () => {
         />
       </Section>
 
-      <Section className="dialog" title="Sumate al dialogo">
+      <Section className="dialog" title="Acerca de">
         <p>
-          Unimos esfuerzos en el fomento del debate competitivo como actividad que invita a los
-          participantes a desarrollar sus habilidades dentro de la discusión racional y respetuosa
-          de las ideas.
+          Fomentando la cultura del debate y pensamiento crítico a través de competencias nacionales
+          abiertasy gratuitas para jóvenes de 12-29 años de edad
         </p>
       </Section>
       <Section title="Debatir en serio" description=" ">
