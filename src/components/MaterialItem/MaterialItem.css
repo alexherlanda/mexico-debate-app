@@ -4,8 +4,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: min-content;
-  height: 150px;
+  height: 190px;
   overflow: hidden;
   margin-bottom: 20px;
   cursor: pointer;
@@ -31,4 +30,11 @@
   color: #5d2f6a;
   font-family: Lato light;
   font-size: 1rem;
+}
+
+/* Large Screens */
+@media screen and (min-width: 680px) {
+  .material-item-container {
+    height: 150px;
+  }
 }

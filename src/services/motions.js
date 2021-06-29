@@ -1,6 +1,8 @@
 const baseURL = 'motions/';
 
-export const READ_MOTIONS = { method: 'GET', path: `${baseURL}?all=true` };
+export const READ_MOTIONS = {
+  method: 'GET',
+};
 
 export const READ_MOTION = ({ noticeId }) => {
   return {

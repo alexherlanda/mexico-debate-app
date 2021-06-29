@@ -1,8 +1,9 @@
 .motion-list {
-  width: 60%;
+  width: 80%;
   margin: auto;
   height: 400px;
 }
+
 .motion-container-list {
   height: 300px;
   max-height: 400px;
@@ -13,29 +14,34 @@
   box-sizing: border-box;
 }
 .motion-item {
+  display: flex;
+  align-items: flex-start;
   color: #b63f88;
   font-family: 'Lato Bold';
   line-height: 34px;
-  height: 34px;
+  min-height: 40px;
   text-align: justify;
   margin: 0 auto;
   margin-bottom: 10px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border: 2px solid #f1f1f1;
-  border-radius: 50px;
+  border-radius: 16px;
   list-style: none;
   padding-left: 25px;
   margin-bottom: 5px;
   overflow: hidden;
-  text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
   padding-right: 10px;
-  background: linear-gradient(90deg, #b63f88, #b63f88 2.5%, rgba(255,255,255,0) 2.5%);
+  background: linear-gradient(90deg, #b63f88, #b63f88 2.5%, rgba(255, 255, 255, 0) 2.5%);
+}
+
+.motion-item p {
+  white-space: normal;
 }
 
 .motion-list h3 {
   color: #b63f88;
+  font-size: 32px;
 }
 
 .motion-list h4 {
@@ -58,7 +64,7 @@
     padding-top: 11px;
   }
   .motion-item {
-    background: linear-gradient(90deg, #b63f88, #b63f88 6%, rgba(255,255,255,0) 6%);
+    background: linear-gradient(90deg, #b63f88, #b63f88 6%, rgba(255, 255, 255, 0) 6%);
   }
   .motion-list {
     margin-left: 0rem;
@@ -67,7 +73,7 @@
 
 @media screen and (max-width: 760px) {
   .motion-list {
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
 }

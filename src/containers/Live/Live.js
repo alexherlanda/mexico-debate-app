@@ -6,7 +6,7 @@ import './Live.css';
 function Live() {
   return (
     <div className="live-container">
-      <Section>
+      <Section title="Mociones">
         <MotionList />
       </Section>
       <Section>
