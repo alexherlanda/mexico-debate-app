@@ -9,7 +9,7 @@ function Live() {
       <Section title="Mociones">
         <MotionList />
       </Section>
-      <Section>
+      <Section title="Avisos">
         <NoticeList />
       </Section>
     </div>

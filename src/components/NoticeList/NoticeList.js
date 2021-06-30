@@ -3,6 +3,7 @@ import './NoticeList.css';
 import { request } from 'services/request';
 import Loader from 'components/Loader';
 import { READ_NOTICES } from 'services/notices';
+const { format, isValid, parseISO } = require('date-fns');
 
 function Notice() {
   const [source, setSource] = useState({ isLoading: false, data: [] });
@@ -24,12 +25,16 @@ function Notice() {
   }, []);
 
   const generateList = () => {
-    return source.data.map((item) => (
-      <li className="notice-list__item " key={item?._id}>
-        <div className="item__notification">{item.message}</div>
-        <div className="item__metadata"> 05/03/21 10:22 </div>
-      </li>
-    ));
+    return source.data.map((item) => {
+      return (
+        <li className="notice-list__item " key={item?._id}>
+          <div className="item__notification">{item.message}</div>
+          <div className="item__metadata">
+            {item?.createdAt && format(parseISO(item.createdAt), 'dd/MM/yyyy HH:mm:ss')}{' '}
+          </div>
+        </li>
+      );
+    });
   };
 
   return (
@@ -37,7 +42,6 @@ function Notice() {
       {source.isLoading && <Loader />}
       {!source.isLoading && source.data?.length > 0 && (
         <>
-          <h3>Avisos</h3>
           <ul className="notice-list__container ">{generateList()}</ul>
         </>
       )}
