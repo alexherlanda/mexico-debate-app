@@ -18,7 +18,7 @@ const GeneralInfo = () => {
       <Section className="dialog" title="Acerca de">
         <p>
           Fomentando la cultura del debate y pensamiento crítico a través de competencias nacionales
-          abiertasy gratuitas para jóvenes de 12-29 años de edad
+          abiertas y gratuitas para jóvenes de 12-29 años de edad
         </p>
       </Section>
       <Section title="Debatir en serio" description=" ">

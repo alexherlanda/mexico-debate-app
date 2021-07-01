@@ -6,12 +6,12 @@ import defaultBG from './img/patron.svg';
 
 const MaterialItem = (props) => {
   const { title, description, url, type, src } = props;
-  
+
   const thumbNailStyle = {
     backgroundColor: type === 'text' ? '#b64f88' : '',
     backgroundImage: `url(${src ? src : defaultBG})`,
-    backgroundSize: type === 'text' ? 'auto 43%': 'auto 100%',
-    backgroundPosition: 'center'
+    backgroundSize: type === 'text' ? 'auto 43%' : 'auto 100%',
+    backgroundPosition: 'center',
   };
 
   return (

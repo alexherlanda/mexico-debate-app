@@ -48,7 +48,7 @@ const Footer = () => {
           />
         </div>
         <a href="mailto:example@email.com">
-          <span className="footer__email">comunicacion@debatemx.org</span>
+          <span className="footer__email">logistica@debatemx.org</span>
         </a>
       </div>
     </footer>

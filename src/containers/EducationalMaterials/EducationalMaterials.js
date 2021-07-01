@@ -84,6 +84,19 @@ const EducationalMaterials = () => {
                 },
               ]}
             />
+            <MaterialsList
+              title="Jueces"
+              list={[
+                {
+                  title: 'Guía de Jueces ',
+                  description:
+                    'Una guía completa para quienes quieren profesionalizarse como jueces.',
+                  url: 'https://debatemexico.org/mexico-debate/guia_jueces.pdf',
+                  type: 'text',
+                  src: jueces,
+                },
+              ]}
+            />
           </>
         );
 
@@ -99,7 +112,7 @@ const EducationalMaterials = () => {
                   description:
                     'Conoce las reglas sobre el formato y la dinámica de los debates en el Torneo.',
                   type: 'text',
-                  src: reglamento
+                  src: reglamento,
                 },
                 {
                   title: 'Política de Equidad',
@@ -107,7 +120,7 @@ const EducationalMaterials = () => {
                   description:
                     'Garantiza que el intercambio de ideas se realice en un ambiente de respeto por todas las personas.',
                   type: 'text',
-                  src: equidad
+                  src: equidad,
                 },
                 {
                   title: 'Guía de oradores',
@@ -115,7 +128,7 @@ const EducationalMaterials = () => {
                   description:
                     'Una guía completa con las mejores técnicas e ideas para ganar debates. Elaborada por campeones.',
                   type: 'text',
-                  src: oradores
+                  src: oradores,
                 },
               ]}
             />
@@ -128,7 +141,7 @@ const EducationalMaterials = () => {
                     'El estándar internacional de debate competitivo, explicado por Daniel Hernández.',
                   url: 'https://www.youtube.com/watch?v=iKAuQjF3ixM&list=PLFk0qboRAjYk2ppW1sY9Jrm0g9qcBXCuz&index=1&t=6s ',
                   type: 'video',
-                  src: parlamentario
+                  src: parlamentario,
                 },
                 {
                   title: 'Interpretación de mociones',
@@ -173,7 +186,7 @@ const EducationalMaterials = () => {
                     'Una guía completa para quienes quieren profesionalizarse como jueces.',
                   url: 'https://debatemexico.org/mexico-debate/guia_jueces.pdf',
                   type: 'text',
-                  src: jueces
+                  src: jueces,
                 },
                 {
                   title: 'Taller para jueces ',
@@ -181,7 +194,7 @@ const EducationalMaterials = () => {
                     'Una guía para aprender a juzgar debate BP. Impartido por Valeria Hernández',
                   url: 'https://www.youtube.com/watch?v=zcMXJZasu8Q&list=PLFk0qboRAjYn_ykcZCvztAZsbvHqIU5Yx&index=8',
                   type: 'text',
-                  src: taller_jueces
+                  src: taller_jueces,
                 },
               ]}
             />
