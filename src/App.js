@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { GeneralInfo, Live, EducationalMaterials, Schedule, MySite } from './containers';
+import { GeneralInfo, Live, EducationalMaterials, Schedule, MySite, About } from './containers';
 import { Tabs, Banner, Footer } from './components';
 import { ToastContainer } from 'react-toastify';
 import { Provider } from 'react-redux';
@@ -23,6 +23,7 @@ function App() {
             <Route exact path="/education" component={EducationalMaterials} />
             <Route exact path="/live" component={Live} />
             <Route exact path="/my-tournament" component={MySite} />
+            <Route exact path="/about" component={About} />
             <Route exact path="*" component={GeneralInfo} />
           </Switch>
           <ToastContainer />

@@ -5,5 +5,6 @@ import TestComponents from './TestComponents';
 import EducationalMaterials from './EducationalMaterials';
 import Schedule from './Schedule';
 import MySite from './MySite';
+import About from './About';
 
-export { GeneralInfo, Schedule, Live, WIP, TestComponents, EducationalMaterials, MySite };
+export { GeneralInfo, Schedule, Live, WIP, TestComponents, EducationalMaterials, MySite, About };
