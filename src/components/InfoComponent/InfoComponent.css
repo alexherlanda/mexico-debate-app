@@ -1,0 +1,132 @@
+.info-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.info-title-label {
+  font-family: Biko bold;
+  color: #b63f88;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.item-container {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  white-space: pre-line;
+  font-size: .9rem;
+}
+
+.info-icon {
+  width: 50%;
+}
+
+.info-second-icon {
+  width: 50%;
+}
+
+.info-blocks {
+  display: flex;
+}
+
+.first-text-container {
+  color: white;
+  background-color: #b64f88;
+  display: flex;
+  width: 220px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  height: 250px;
+}
+
+.first-text-container:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px;
+  width: 0;
+  height: 0;
+  z-index: 2;
+  margin-top: 110px;
+  margin-left: 220px;
+  border-color: transparent transparent transparent #b64f88;
+}
+
+.second-text-container {
+  color: rgba(182, 63, 136, 1);
+  background-color: white;
+  display: flex;
+  width: 220px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  border-left: 1px solid transparent;
+}
+
+.second-text-container:before {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px;
+  width: 0;
+  height: 0;
+  margin-top: 110px;
+  margin-left: 219px;
+  border-left: 15px solid lightgray;
+  border-right: 15px solid transparent;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.second-text-container:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 15px;
+  width: 0;
+  height: 0;
+  margin-top: 111px;
+  margin-left: 218px;
+  border-left: 15px solid white;
+  border-right: 14px solid transparent;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+}
+
+@media screen and (max-width: 760px) {
+  .item-container {
+    padding: 1.5rem 0.95rem;
+    font-size: .8rem;
+  }
+
+  .info-second-icon {
+    width: 50%;
+  }
+
+  .first-text-container {
+    width: 180px;
+  }
+
+  .first-text-container:before {
+    margin-left: 179px;
+  }
+
+  .second-text-container:before {
+    margin-left: 179px;
+  }
+
+  .second-text-container:after {
+    margin-left: 178px;
+  }
+
+  .second-text-container {
+    width: 180px;
+  }
+}

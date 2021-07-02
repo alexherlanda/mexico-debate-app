@@ -1,0 +1,11 @@
+.about-container {
+  /* position: absolute; */
+  margin: auto;
+  width: 650px;
+}
+
+@media screen and (max-width: 760px) {
+  .about-container {
+    max-width: 300px;
+  }
+}

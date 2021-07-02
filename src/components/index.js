@@ -12,7 +12,8 @@ import MenuOption from './MenuOption';
 import FormInput from './FormInput';
 import MaterialsList from './MaterialsList';
 import Footer from './Footer';
-import SocialButton from './SocialButton'
+import SocialButton from './SocialButton';
+import InfoComponent from './InfoComponent';
 
 export {
   ActivitiesList,
@@ -29,5 +30,6 @@ export {
   FormInput,
   MaterialsList,
   Footer,
-  SocialButton
+  SocialButton,
+  InfoComponent
 };
