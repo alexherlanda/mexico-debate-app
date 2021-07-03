@@ -6,7 +6,7 @@
 }
 
 .info-title-label {
-  font-family: Biko bold;
+  font-family: 'Biko Bold';
   color: #b63f88;
   font-size: 1.5rem;
   margin-bottom: 1rem;
@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: space-between;
   white-space: pre-line;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .info-icon {
@@ -103,7 +103,7 @@
 @media screen and (max-width: 760px) {
   .item-container {
     padding: 1.5rem 0.95rem;
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .info-second-icon {

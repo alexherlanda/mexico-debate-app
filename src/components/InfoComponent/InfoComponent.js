@@ -2,13 +2,7 @@ import React from 'react';
 import './InfoComponent.css';
 
 const InfoComponent = (props) => {
-  const {
-    title,
-    firstText,
-    secondText,
-    firstIcon,
-    secondIcon
-  } = props;
+  const { title, firstText, secondText, firstIcon, secondIcon } = props;
 
   return (
     <div className="info-main-container">
@@ -17,18 +11,18 @@ const InfoComponent = (props) => {
         <div className="first-text-container">
           <div className="item-container">
             {firstIcon && <img className="info-icon" src={firstIcon} alt="" />}
-            {firstText}
+            {firstText()}
           </div>
         </div>
         <div className="second-text-container">
           <div className="item-container">
             {secondIcon && <img className="info-second-icon" src={secondIcon} alt="" />}
-            {secondText}
+            {secondText()}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default InfoComponent;
