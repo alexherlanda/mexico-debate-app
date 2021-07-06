@@ -97,7 +97,7 @@ export function* workBroadcastsRequest() {
     const response = yield call(broadcastsList, { cancelToken: source.token });
 
     if (response?.data?.data) {
-      yield put(broadcastsSuccess(response.data.data.user));
+      yield put(broadcastsSuccess(response.data.data.transmissions));
     } else {
       yield put(broadcastsFail());
     }
@@ -122,5 +122,5 @@ export function* watchProfileRequest() {
 }
 
 export default function* rootSaga() {
-  yield all([watchLoginRequest, watchProfileRequest].map(fork));
+  yield all([watchLoginRequest, watchProfileRequest, watchBroadcastsRequest].map(fork));
 }
