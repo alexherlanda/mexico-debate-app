@@ -1,22 +1,22 @@
-import React from "react";
-import instagram from "./images/instagram.png";
-import messenger from "./images/messenger.png";
-import twitter from "./images/twitter.png";
-import youtube from "./images/youtube.png";
-import "./SocialButton.css";
+import React from 'react';
+import instagram from './images/insta.svg';
+import messenger from './images/msn.svg';
+import twitter from './images/tw.svg';
+import youtube from './images/yt.svg';
+import './SocialButton.css';
 
-const SocialButton = ({ socialNetwork, link, alt = "Icono de red social" }) => {
+const SocialButton = ({ socialNetwork, link, alt = 'Icono de red social' }) => {
   const getIcon = (key) => {
     switch (key) {
-      case "instagram":
+      case 'instagram':
         return instagram;
-      case "messenger":
+      case 'messenger':
         return messenger;
-      case "facebook":
+      case 'facebook':
         return null;
-      case "twitter":
+      case 'twitter':
         return twitter;
-      case "youtube":
+      case 'youtube':
         return youtube;
       default:
         return instagram;
@@ -25,7 +25,7 @@ const SocialButton = ({ socialNetwork, link, alt = "Icono de red social" }) => {
   return (
     <a href={link}>
       <button className="social-button">
-        <img src={getIcon(socialNetwork)} alt={alt} />
+        <img src={getIcon(socialNetwork)} alt={alt} height="30px" />
       </button>
     </a>
   );

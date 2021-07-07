@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './a.svg';
+import logo from './a.png';
 import ineLogo from './ine.svg';
 import SocialButton from '../SocialButton';
 import './Footer.css';
@@ -10,16 +10,20 @@ const Footer = () => {
       <div className="footer__about-us">
         <span className="footer__title"> ACERCA DE </span>
         <p className="footer__text">
-          Creando espacios para compartir, discutir y comprender desde 2015. Conoce nuestro
-          <a href="https://debatemexico.org/legal/Aviso%20de%20Privacidad%20Sitio%20Web.pdf">
-            aviso de privacidad
+          Creando espacios para compartir, discutir y comprender desde 2015.
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://debatemexico.org/legal/Aviso%20de%20Privacidad%20Sitio%20Web.pdf"
+          >
+            Conoce nuestro aviso de privacidad
           </a>
         </p>
       </div>
-      <a href="https://debatemexico.org/">
+      <a target="_blank" rel="noopener noreferrer" href="https://debatemexico.org/">
         <img className="footer__logo" src={logo} alt="Logo de la AMD" />
       </a>
-      <a href="https://portal.ine.mx/">
+      <a target="_blank" rel="noopener noreferrer" href="https://portal.ine.mx/">
         <img className="footer__logo-ine" src={ineLogo} alt="Logo de la AMD" />
       </a>
 

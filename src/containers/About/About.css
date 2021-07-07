@@ -1,11 +1,28 @@
 .about-container {
-  /* position: absolute; */
-  margin: auto;
-  width: 650px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 95%;
+  align-items: center;
+  padding: 10px;
 }
 
-@media screen and (max-width: 760px) {
+.about-container__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-container__description {
+  padding: 30px;
+  border-left: 2px solid orange;
+  padding: 6px;
+  margin-bottom: 25px;
+}
+
+/* Large Screens */
+@media screen and (min-width: 680px) {
   .about-container {
-    max-width: 300px;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import InfoComponent from '../../components/InfoComponent';
+import Section from '../../components/Section';
 import { Link } from 'react-router-dom';
 import './About.css';
 import cerebro from './img/cerebro.svg';
@@ -53,7 +54,29 @@ const About = () => {
 
   return (
     <div className="about-container">
-      <div>
+      <article className="about-container__description">
+        <p>
+          México Debate nace en 2019 como un esfuerzo entre la{' '}
+          <a target="_blank" rel="noopener noreferrer" href="https://debatemexico.org/">
+            {' '}
+            Asociación Mexicana de Debate{' '}
+          </a>{' '}
+          y el Instituto Nacional Electoral por promover la cultura del debate y la deliberación en
+          todo México a través de diversas competencias y programas académicos de alcance nacional.
+        </p>
+        <p>
+          Hoy más que nunca la juventud requiere de herramientas que le permita desarrollarse como
+          ciudadanía activa, autónoma, crítica y tolerante. La práctica del debate es una
+          herramienta que permite alcanzar dichos objetivos en un ambiente además divertido e
+          incluyente toda vez que nuestros espacios ponen énfasis en el crecimiento pedagógico sobre
+          el aspecto netamente competitivo.
+        </p>
+        <p>
+          Siendo su tercera edición, este año 2021 México Debate se compone de los siguientes
+          eventos:
+        </p>
+      </article>
+      <div className="about-container__cards">
         {list.map((item) => (
           <InfoComponent key={item.title} {...item} />
         ))}

@@ -8,6 +8,9 @@
   background-image: url("./bg.svg");
   background-size: cover;
   background-position-x: center;
+  padding-top: 107px;
+  padding-bottom: 107px;
+  color: rgb(182, 63, 136);
 }
 
 .footer__title {
@@ -23,13 +26,13 @@
 .footer__email {
   font-family: 'Lato Light';
   font-synthesis: none;
-  color: white;
+  color: rgb(182, 63, 136);
   font-size: 16px;
 }
 
 .footer__logo {
   margin-bottom: 50px;
-  width: 120px;
+  width: 170px;
 }
 
 
@@ -41,7 +44,6 @@
 .footer__about-us {
   /* background-color: green; */
   display: none;
-  color: white;
 }
 
 .footer__about-us p {
@@ -59,7 +61,7 @@
 }
 
 .footer__social span {
-  color: white;
+  color: rgb(182, 63, 136);
 }
 
 .social__buttons-container {

@@ -39,7 +39,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Política de Equidad',
-                  url: 'https://portal.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebate-politica.pdf ',
+                  url: 'https://debatemexico.org/mexico-debate/equidad.pdf ',
                   description:
                     'Garantiza que el intercambio de ideas se realice en un ambiente de respeto por todas las personas.',
                   type: 'text',
@@ -116,7 +116,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Política de Equidad',
-                  url: 'https://portal.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebate-politica.pdf ',
+                  url: 'https://debatemexico.org/mexico-debate/equidad.pdf ',
                   description:
                     'Garantiza que el intercambio de ideas se realice en un ambiente de respeto por todas las personas.',
                   type: 'text',
