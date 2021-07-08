@@ -54,7 +54,7 @@ const Schedule = () => {
           rel="noopener noreferrer"
           href={
             selectedCategory === 'minor'
-              ? 'https://www.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebateHorarios-categoria-menor_Final.pdf'
+              ? 'https://debatemexico.org/mexico-debate/horarios_menor.pdf'
               : 'https://portal.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebate-horarios-cat-mayor-final.pdf'
           }
           className="bottomBar__download"

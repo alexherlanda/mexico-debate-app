@@ -39,7 +39,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Política de Equidad',
-                  url: 'https://debatemexico.org/mexico-debate/equidad.pdf ',
+                  url: 'https://debatemexico.org/mexico-debate/equidad.pdf',
                   description:
                     'Garantiza que el intercambio de ideas se realice en un ambiente de respeto por todas las personas.',
                   type: 'text',
@@ -124,7 +124,7 @@ const EducationalMaterials = () => {
                 },
                 {
                   title: 'Guía de oradores',
-                  url: 'https://debatemexico.org/mexico-debate/guia_jueces.pdf',
+                  url: 'https://debatemexico.org/mexico-debate/guia_oradores_menor.pdf',
                   description:
                     'Una guía completa con las mejores técnicas e ideas para ganar debates. Elaborada por campeones.',
                   type: 'text',

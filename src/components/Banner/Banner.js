@@ -37,7 +37,7 @@ const Banner = () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://portal.ine.mx/wp-content/uploads/2021/05/deceyec-mxdebate-politica.pdf"
+            href="https://debatemexico.org/mexico-debate/equidad.pdf"
           >
             <b>POLÍTICA DE EQUIDAD</b>
           </a>
