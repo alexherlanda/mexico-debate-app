@@ -8,6 +8,7 @@ import oradores from './img/oradores.svg';
 import mociones from './img/mociones-07.png';
 import taller_jueces from './img/taller_jueces.svg';
 import jueces from './img/jueces.svg';
+import tecnico from './img/tecnico.svg';
 import final from './img/final-07.png';
 import extensiones from './img/extensiones-07.png';
 import estrategias from './img/estrategias-07.png';
@@ -52,6 +53,14 @@ const EducationalMaterials = () => {
                     'Una guía completa con las mejores técnicas e ideas para ganar debates. Elaborada por campeones.',
                   type: 'text',
                   src: oradores,
+                },
+                {
+                  title: 'Manual técnico',
+                  url: 'https://debatemexico.org/mexico-debate/manual_tecnico.pdf',
+                  description:
+                    'Una guía completa para utilizar todas las plataformas de México Debate',
+                  type: 'text',
+                  src: tecnico,
                 },
               ]}
             />
@@ -130,6 +139,7 @@ const EducationalMaterials = () => {
                   type: 'text',
                   src: oradores,
                 },
+                
               ]}
             />
             <MaterialsList

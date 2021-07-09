@@ -16,7 +16,7 @@
 .motion-item {
   display: flex;
   align-items: flex-start;
-  color: #b63f88;
+  color: black;
   font-family: 'Lato Bold';
   line-height: 34px;
   min-height: 40px;
@@ -36,6 +36,7 @@
 }
 
 .motion-item p {
+  padding: 15px;
   white-space: normal;
 }
 
