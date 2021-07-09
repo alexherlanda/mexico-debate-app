@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import 'components/MotionList/Motion.css';
-
+import MaterialList from '../MaterialItem';
 import Loader from 'components/Loader';
 import { broadcastsRequest } from 'redux/actions/';
 import { connect } from 'react-redux';
@@ -11,9 +11,7 @@ function BroadcastList({ broadcastsRequest: getBroadcast, source }) {
 
   const generateList = () => {
     return source.data.map((item) => (
-      <div className="motion-item" key={item?._id}>
-        <p>{item.title}</p>
-      </div>
+      <MaterialList key={item.id} title={item.name} description={''} url={item.url} type="text" />
     ));
   };
 

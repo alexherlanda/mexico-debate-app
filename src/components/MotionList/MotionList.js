@@ -41,7 +41,9 @@ function MotionList() {
   const generateList = () => {
     return source.data.map((item) => (
       <div className="motion-item" key={item?._id}>
-        <p>{item.title}</p>
+        <p>{` ${item.infoSlide ? 'Info: ' + item.infoSlide + ' |' : ''}  Mocion:  ${
+          item.title
+        }`}</p>
       </div>
     ));
   };
