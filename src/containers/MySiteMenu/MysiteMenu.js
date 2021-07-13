@@ -142,7 +142,6 @@ const MySiteMenu = ({ userInfo }) => {
         label="Obtener mi comprobante"
         onClick={handleGetAssistanceCertificate}
         loading={activeAction === 'assistance'}
-        disabled
       />
       <MenuOption label="Obtener  mi diploma" disabled />
       <MenuOption disabled label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
