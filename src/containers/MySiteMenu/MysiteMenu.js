@@ -87,8 +87,39 @@ const MySiteMenu = ({ userInfo }) => {
     }
   };
 
-  const handleGetCertificate = () => {
-    console.log('confirmando asistencia');
+  const handleGetCertificate = async () => {
+    setActiveAction('diploma');
+    try {
+      const response = await axios({
+        method: 'GET',
+        url: `/users/${userInfo?.id}/diploma`,
+        type: 'menor',
+      });
+      if (response.status === 200) {
+        const base64 = response?.data?.data?.diploma;
+        console.log('respomse');
+        const link = document.createElement('a');
+        const concat = `${headerbase64}${base64}`;
+        link.download = 'Diploma Mexico Debate';
+        console.log('concat', concat);
+        link.href = concat;
+        link.click();
+        toast.success('Su diploma se ha descargado correctamente.', {
+          position: 'bottom-right',
+          toastId: 's',
+        });
+        setActiveAction('');
+      } else {
+        toast.error(' Lo sentimos, algo salio mal :( Intente mas tarde ', {
+          position: 'bottom-right',
+          toastId: 'handleGetAssistanceCertificate',
+        });
+        setActiveAction('');
+      }
+    } catch (error) {
+      console.error(error);
+      setActiveAction('');
+    }
   };
 
   const handleGoToTabbieCat = () => {
@@ -143,14 +174,18 @@ const MySiteMenu = ({ userInfo }) => {
         onClick={handleGetAssistanceCertificate}
         loading={activeAction === 'assistance'}
       />
-      <MenuOption label="Obtener  mi diploma" disabled />
+      <MenuOption
+        label="Obtener  mi diploma"
+        onClick={handleGetCertificate}
+        loading={activeAction === 'diploma'}
+      />
       <MenuOption disabled label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
       <MenuOption
         label="Contactar a mi coach"
         disbaled={!userInfo?.coachNumber}
         href={
           userInfo?.coachNumber
-            ? `https://wa.me/${userInfo?.coachNumber.replace(/\s/g, '')}`
+            ? `https://wa.me/+${userInfo?.coachNumber.replace(/\s/g, '')}`
             : undefined
         }
       />
