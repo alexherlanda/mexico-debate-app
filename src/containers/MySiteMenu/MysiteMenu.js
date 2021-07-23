@@ -91,11 +91,11 @@ const MySiteMenu = ({ userInfo }) => {
     const { category, role } = userInfo;
     let certEndpoint = '';
     if (role === 7 && category === 'minor') {
-      certEndpoint = 'juezMenor';
+      certEndpoint = 'juezmenor';
     } else if (role === 7 && category === 'major') {
-      certEndpoint = 'juezMayor';
+      certEndpoint = 'juezmayor';
     } else {
-      certEndpoint = 'diploma';
+      certEndpoint = 'menor';
     }
 
     return certEndpoint;
@@ -103,12 +103,13 @@ const MySiteMenu = ({ userInfo }) => {
 
   const handleGetCertificate = async () => {
     setActiveAction('diploma');
-    console.log('userInfo', userInfo?.role);
+
     try {
       const response = await axios({
         method: 'GET',
-        url: `/users/${userInfo?.id}/${getCertificateEndpoint()}`,
-        type: 'menor',
+        url: `/users/${userInfo?.id}/diploma`,
+
+        params: { type: getCertificateEndpoint() },
       });
       if (response.status === 200) {
         const base64 = response?.data?.data?.diploma;
