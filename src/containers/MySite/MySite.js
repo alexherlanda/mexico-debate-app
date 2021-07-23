@@ -52,8 +52,16 @@ function MySite(props) {
       <div className="my-site">
         <SectionDetail
           centerInfo
-          title={`Hola ${user?.data?.fullname},`}
-          info="Recuerda que es indispensable confirmar tu asistencia en esta sección para poder participar en México Debate 2021. Esperamos que tengas un gran torneo."
+          title={`Hola ${
+            user?.data?.email === 'itzelgaona@lawyer.com'
+              ? 'Pricesa de Michoacán'
+              : user?.data?.fullname
+          },`}
+          info={
+            user?.data?.email === 'itzelgaona@lawyer.com'
+              ? 'Eres una inspiracion hermosa y luminosa, en especial en mi vida. Nunca  olvides lo maravillosa que eres.'
+              : 'Esperamos que tengas un gran torneo.'
+          }
         />
         <MySiteMenu userInfo={user?.data} />
       </div>

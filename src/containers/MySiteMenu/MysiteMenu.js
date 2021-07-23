@@ -87,21 +87,34 @@ const MySiteMenu = ({ userInfo }) => {
     }
   };
 
+  const getCertificateEndpoint = () => {
+    const { category, role } = userInfo;
+    let certEndpoint = '';
+    if (role === 7 && category === 'minor') {
+      certEndpoint = 'juezMenor';
+    } else if (role === 7 && category === 'major') {
+      certEndpoint = 'juezMayor';
+    } else {
+      certEndpoint = 'diploma';
+    }
+
+    return certEndpoint;
+  };
+
   const handleGetCertificate = async () => {
     setActiveAction('diploma');
+    console.log('userInfo', userInfo?.role);
     try {
       const response = await axios({
         method: 'GET',
-        url: `/users/${userInfo?.id}/diploma`,
+        url: `/users/${userInfo?.id}/${getCertificateEndpoint()}`,
         type: 'menor',
       });
       if (response.status === 200) {
         const base64 = response?.data?.data?.diploma;
-        console.log('respomse');
         const link = document.createElement('a');
         const concat = `${headerbase64}${base64}`;
         link.download = 'Diploma Mexico Debate';
-        console.log('concat', concat);
         link.href = concat;
         link.click();
         toast.success('Su diploma se ha descargado correctamente.', {
@@ -127,7 +140,7 @@ const MySiteMenu = ({ userInfo }) => {
   };
 
   const statusEnum = {
-    0: { label: 'Expulsado', value: 0 },
+    0: { label: '', value: 0 },
     1: {
       label: 'En lista de espera',
       value: 1,
