@@ -92,8 +92,12 @@ const MySiteMenu = ({ userInfo }) => {
     let certEndpoint = '';
     if (role === 7 && category === 'minor') {
       certEndpoint = 'juezmenor';
+    } else if (role === 8 && category === 'minor') {
+      certEndpoint = 'juezPagadoMenor';
     } else if (role === 7 && category === 'major') {
       certEndpoint = 'juezmayor';
+    } else if (role === 8 && category === 'major') {
+      certEndpoint = 'juezPagadoMayor';
     } else {
       certEndpoint = 'menor';
     }
@@ -172,6 +176,13 @@ const MySiteMenu = ({ userInfo }) => {
     },
   };
 
+  const roleEnum = {
+    DEBATIENTE: 0,
+    ADMIN: 1,
+    JUEZ_VOLUNTARIO: 7,
+    JUEZ_PAGADO: 8,
+  };
+
   return (
     <div className="my-site-menu">
       <h2 className="info-title">Mis acciones</h2>
@@ -193,38 +204,41 @@ const MySiteMenu = ({ userInfo }) => {
         onClick={handleGetCertificate}
         loading={activeAction === 'diploma'}
       />
-      <MenuOption disabled label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
-      <MenuOption
-        label="Contactar a mi coach"
-        disbaled={!userInfo?.coachNumber}
-        href={
-          userInfo?.coachNumber
-            ? `https://wa.me/+${userInfo?.coachNumber.replace(/\s/g, '')}`
-            : undefined
-        }
-      />
-
-      <h2 className="info-title">Mi informacion</h2>
-      <FormInput
-        disbaled
-        value={statusEnum[userStatus].label}
-        name="status"
-        label="Mi status en el torneo"
-      />
-      <h2 className="info-title">Mi coach</h2>
-      <FormInput
-        disbaled
-        value={userInfo?.coachName ?? 'Tu coach aún no es asignado'}
-        name="coach"
-        label="Nombre"
-      />
-      <FormInput disbaled value={userInfo?.coachNumber ?? '--'} name="coach" label="Telefono" />
-      <FormInput
-        disbaled
-        value={userInfo?.coachEmail ? userInfo?.coachEmail : '--'}
-        name="coach"
-        label="Correo"
-      />
+      {userInfo.role === roleEnum.DEBATIENTE ? (
+        <>
+          <MenuOption disabled label="Ir a mi tabbiecat" onClick={handleGoToTabbieCat} />
+          <MenuOption
+            label="Contactar a mi coach"
+            disbaled={!userInfo?.coachNumber}
+            href={
+              userInfo?.coachNumber
+                ? `https://wa.me/+${userInfo?.coachNumber.replace(/\s/g, '')}`
+                : undefined
+            }
+          />
+          <h2 className="info-title">Mi informacion</h2>
+          <FormInput
+            disbaled
+            value={statusEnum[userStatus].label}
+            name="status"
+            label="Mi status en el torneo"
+          />
+          <h2 className="info-title">Mi coach</h2>
+          <FormInput
+            disbaled
+            value={userInfo?.coachName ?? 'Tu coach aún no es asignado'}
+            name="coach"
+            label="Nombre"
+          />
+          <FormInput disbaled value={userInfo?.coachNumber ?? '--'} name="coach" label="Telefono" />
+          <FormInput
+            disbaled
+            value={userInfo?.coachEmail ? userInfo?.coachEmail : '--'}
+            name="coach"
+            label="Correo"
+          />
+        </>
+      ) : null}
     </div>
   );
 };
