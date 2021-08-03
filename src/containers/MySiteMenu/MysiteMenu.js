@@ -89,20 +89,41 @@ const MySiteMenu = ({ userInfo }) => {
 
   const getCertificateEndpoint = () => {
     const { category, role } = userInfo;
-    let certEndpoint = '';
-    if (role === 7 && category === 'minor') {
-      certEndpoint = 'juezmenor';
-    } else if (role === 8 && category === 'minor') {
-      certEndpoint = 'juezPagadoMenor';
-    } else if (role === 7 && category === 'major') {
-      certEndpoint = 'juezmayor';
-    } else if (role === 8 && category === 'major') {
-      certEndpoint = 'juezPagadoMayor';
-    } else {
-      certEndpoint = 'menor';
-    }
+    if (category === 'mayor' || category === 'major') {
+      switch (role) {
+        case roleEnum.JUEZ_PAGADO:
+          console.log('JUEZ PAGADO MAYOR');
+          //No hay diploma para jeuces pagado aun. remplazar cuando haya
+          return 'mayor';
 
-    return certEndpoint;
+        case roleEnum.JUEZ_VOLUNTARIO:
+          //No esta cargando el diploma de jeuces.  remplazar cuando se repare
+          console.log('JUEZ VOLUNATARIO MAYOR');
+          return 'mayor';
+
+        case roleEnum.DEBATIENTE:
+          console.log('DEBATIENTE mayor');
+          return 'mayor';
+      }
+    }
+    if (category === 'menor' || category === 'minor') {
+      switch (role) {
+        case roleEnum.JUEZ_PAGADO:
+          //No hay diploma para jeuces pagado aun. remplazar cuando haya
+          console.log('JUEZ PAGADO MENOR');
+
+          return 'menor';
+
+        case roleEnum.JUEZ_VOLUNTARIO:
+          console.log('JUEZ VOLUNATRIO MENOR');
+
+          return 'juezMenor';
+
+        case roleEnum.DEBATIENTE:
+          console.log(' DEBATIENTE menor');
+          return 'menor';
+      }
+    }
   };
 
   const handleGetCertificate = async () => {
